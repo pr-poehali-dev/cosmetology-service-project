@@ -99,31 +99,7 @@ export default function Index() {
               <span>Более 200 довольных клиентов в Артёме</span>
             </div>
           </div>
-          <div className="hero-visual reveal">
-            <div className="hero-card">
-              <div className="hero-card-badge">Популярно сегодня</div>
-              <div className="hero-card-title">Программа «Фарфоровая куколка»</div>
-              <div className="hero-card-text">Глубокий детокс + сияние кожи за один визит. Ультразвуковая чистка и фонофорез с детокс-капсулами.</div>
-              <div className="hero-card-stats">
-                <div className="stat-item">
-                  <div className="stat-num">1</div>
-                  <div className="stat-label">визит</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-num">0</div>
-                  <div className="stat-label">дискомфорта</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-num">7</div>
-                  <div className="stat-label">процедур</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-num">∞</div>
-                  <div className="stat-label">удовольствия</div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 

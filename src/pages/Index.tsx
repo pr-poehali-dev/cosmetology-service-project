@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Index() {
+  const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
+
   useEffect(() => {
     // Dark mode toggle
     const t = document.querySelector('[data-theme-toggle]') as HTMLButtonElement | null;
@@ -497,7 +499,12 @@ export default function Index() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
                 Написать в Telegram
               </a>
-              <p className="form-privacy">🔒 Данные защищены. Не передаём третьим лицам.</p>
+              <p className="form-privacy">
+                🔒 Нажимая кнопку, вы соглашаетесь с{' '}
+                <button type="button" onClick={() => setModal('privacy')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>политикой конфиденциальности</button>
+                {' '}и даёте{' '}
+                <button type="button" onClick={() => setModal('consent')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>согласие на обработку персональных данных</button>
+              </p>
             </form>
           </div>
         </div>
@@ -545,6 +552,57 @@ export default function Index() {
           ⚠️ Имеются противопоказания. Требуется консультация специалиста. Процедуры выполняются после личной консультации и оценки состояния кожи.
         </div>
       </footer>
+      {/* МОДАЛЬНЫЕ ОКНА */}
+      {modal && (
+        <div onClick={() => setModal(null)} style={{position:'fixed',inset:0,zIndex:1000,background:'rgba(0,0,0,0.55)',display:'flex',alignItems:'center',justifyContent:'center',padding:'var(--space-6)'}}>
+          <div onClick={e => e.stopPropagation()} style={{background:'var(--color-bg)',borderRadius:'var(--radius-xl)',maxWidth:'600px',width:'100%',maxHeight:'85vh',overflowY:'auto',boxShadow:'var(--shadow-lg)',border:'1px solid var(--color-border)'}}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'var(--space-6) var(--space-8)',borderBottom:'1px solid var(--color-divider)',position:'sticky',top:0,background:'var(--color-bg)',zIndex:1}}>
+              <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-xl)',fontWeight:700,margin:0}}>
+                {modal === 'privacy' ? 'Политика конфиденциальности' : 'Согласие на обработку персональных данных'}
+              </h2>
+              <button onClick={() => setModal(null)} style={{width:36,height:36,borderRadius:'var(--radius-full)',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--color-text-muted)',flexShrink:0,cursor:'pointer',border:'none',background:'none',fontSize:'1.25rem'}}>✕</button>
+            </div>
+            <div style={{padding:'var(--space-8)',fontSize:'var(--text-sm)',color:'var(--color-text-muted)',lineHeight:1.8}}>
+              {modal === 'privacy' ? (
+                <>
+                  <p style={{marginBottom:'var(--space-5)',color:'var(--color-text-faint)',fontSize:'var(--text-xs)'}}>Последнее обновление: апрель 2026 г.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>1. Общие положения</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Настоящая политика конфиденциальности регулирует порядок обработки и использования персональных данных пользователей, оставивших заявку на сайте косметолога Александры (г. Артём).</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>2. Какие данные мы собираем</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>При заполнении формы записи мы собираем: имя (имя, которое вы указали), номер телефона, а также выбранную процедуру. Данные передаются исключительно с целью обратной связи и записи на процедуру.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>3. Как мы используем данные</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Собранные данные используются исключительно для: связи с вами по вопросам записи, подтверждения и напоминания о визите, предоставления информации об актуальных предложениях (только с вашего согласия).</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>4. Передача данных третьим лицам</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Мы не передаём ваши персональные данные третьим лицам, партнёрам или рекламным сетям. Данные хранятся только у специалиста и используются исключительно для записи клиентов.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>5. Хранение и защита данных</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Данные хранятся в защищённом виде. Вы вправе в любой момент запросить удаление ваших данных, направив сообщение по контактам, указанным на сайте.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>6. Контакты</h3>
+                  <p>По вопросам обработки персональных данных обращайтесь по телефону: <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a></p>
+                </>
+              ) : (
+                <>
+                  <p style={{marginBottom:'var(--space-5)',color:'var(--color-text-faint)',fontSize:'var(--text-xs)'}}>В соответствии с Федеральным законом № 152-ФЗ «О персональных данных»</p>
+                  <p style={{marginBottom:'var(--space-5)'}}>Я, субъект персональных данных, оставляя заявку на сайте косметолога Александры (г. Артём, ул. Фрунзе, 60), даю своё согласие на обработку следующих персональных данных:</p>
+                  <ul style={{marginBottom:'var(--space-5)',paddingLeft:'var(--space-6)',display:'flex',flexDirection:'column',gap:'var(--space-2)'}}>
+                    <li>Имя (фамилия, имя — по желанию)</li>
+                    <li>Номер телефона</li>
+                    <li>Информация о выбранной процедуре</li>
+                  </ul>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>Цели обработки</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Персональные данные обрабатываются исключительно в целях организации записи на косметологические процедуры, подтверждения и напоминания о визите.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>Условия обработки</h3>
+                  <p style={{marginBottom:'var(--space-5)'}}>Обработка персональных данных осуществляется без передачи третьим лицам. Срок хранения данных — до момента отзыва согласия субъектом персональных данных.</p>
+                  <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-lg)',color:'var(--color-text)',marginBottom:'var(--space-3)'}}>Отзыв согласия</h3>
+                  <p>Я вправе отозвать настоящее согласие в любой момент, направив соответствующее уведомление по телефону <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a> или в Telegram.</p>
+                </>
+              )}
+            </div>
+            <div style={{padding:'var(--space-6) var(--space-8)',borderTop:'1px solid var(--color-divider)',textAlign:'center'}}>
+              <button onClick={() => setModal(null)} className="btn-primary">Понятно, закрыть</button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

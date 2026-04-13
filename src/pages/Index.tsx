@@ -181,12 +181,7 @@ export default function Index() {
         <div className="container">
           <div className="about-inner">
             <div className="about-photo reveal">
-              <div className="about-photo-placeholder">
-                <div>
-                  <svg width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{margin:'0 auto var(--space-4)'}}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  <p style={{fontSize:'var(--text-sm)'}}>Фото мастера</p>
-                </div>
-              </div>
+              <img src="https://cdn.poehali.dev/files/5db92540-84ff-4566-9b07-2d7cb5e70ad9.png" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top center',display:'block'}} />
               <div className="about-photo-badge">
                 <div className="about-name">Александра</div>
                 <div className="about-role">Косметолог · Артём</div>

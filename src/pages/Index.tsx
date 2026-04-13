@@ -1,627 +1,555 @@
-import { useState } from "react";
-import Icon from "@/components/ui/icon";
-
-const HERO_IMG = "https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/da311707-eba5-42b5-90bc-a98d391c2d03.jpg";
-
-const services = [
-  { icon: "Sparkles", title: "Чистка лица", desc: "Глубокое очищение пор, ультразвуковая и механическая чистка", price: "от 3 500 ₽", duration: "90 мин" },
-  { icon: "Zap", title: "Лазерная эпиляция", desc: "Удаление нежелательных волос на любых участках тела", price: "от 1 200 ₽", duration: "30–120 мин" },
-  { icon: "Droplets", title: "Биоревитализация", desc: "Инъекции гиалуроновой кислоты для увлажнения и омоложения", price: "от 7 000 ₽", duration: "60 мин" },
-  { icon: "Star", title: "Мезотерапия", desc: "Коктейли витаминов и микроэлементов для кожи", price: "от 5 500 ₽", duration: "60 мин" },
-  { icon: "Sun", title: "Фотоомоложение", desc: "IPL-терапия для выравнивания тона и структуры кожи", price: "от 4 000 ₽", duration: "45 мин" },
-  { icon: "Heart", title: "Контурная пластика", desc: "Филлеры на основе гиалуроновой кислоты для коррекции", price: "от 12 000 ₽", duration: "60 мин" },
-];
-
-const portfolio = [
-  { before: "Фото ДО", after: "Фото ПОСЛЕ", label: "Биоревитализация", result: "Увлажнение и сияние" },
-  { before: "Фото ДО", after: "Фото ПОСЛЕ", label: "Контурная пластика", result: "Коррекция овала" },
-  { before: "Фото ДО", after: "Фото ПОСЛЕ", label: "Мезотерапия", result: "Омоложение кожи" },
-];
-
-const times = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
-
-const stats = [
-  { value: "8+", label: "лет опыта" },
-  { value: "2 400", label: "клиентов" },
-  { value: "98%", label: "довольны результатом" },
-  { value: "15+", label: "процедур" },
-];
-
-const faqs = [
-  { q: "Нужна ли консультация перед процедурой?", a: "Да, первичная консультация косметолога входит в стоимость любой процедуры и проходит перед её началом." },
-  { q: "Как подготовиться к лазерной эпиляции?", a: "Побрейте зону обработки за 1–2 дня, избегайте загара 2 недели. Мы пришлём полную памятку после записи." },
-  { q: "Болезненны ли инъекционные процедуры?", a: "Мы используем современные препараты с анестетиком и местную анестезию. Дискомфорт минимален." },
-  { q: "Сколько сеансов нужно?", a: "Зависит от процедуры и задачи. Косметолог составит индивидуальный план на консультации." },
-];
+import { useEffect } from "react";
 
 export default function Index() {
-  const [activeNav, setActiveNav] = useState("home");
-  const [selectedService, setSelectedService] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [bookingDone, setBookingDone] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    // Dark mode toggle
+    const t = document.querySelector('[data-theme-toggle]') as HTMLButtonElement | null;
+    const r = document.documentElement;
+    let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+    const sunIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    const moonIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    if (t) {
+      t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+      const handler = () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+        t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+      };
+      t.addEventListener('click', handler);
+    }
 
-  const navLinks = [
-    { id: "home", label: "Главная" },
-    { id: "services", label: "Услуги" },
-    { id: "about", label: "О кабинете" },
-    { id: "portfolio", label: "Портфолио" },
-    { id: "booking", label: "Запись" },
-    { id: "contacts", label: "Контакты" },
-  ];
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
 
-  const scrollTo = (id: string) => {
-    setActiveNav(id);
-    setMobileOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+    // Service card last span fix for mobile
+    const lastCard = document.querySelector('.service-card[data-wide]') as HTMLElement | null;
+    function fixLastCard() {
+      if (!lastCard) return;
+      if (window.innerWidth <= 768) lastCard.style.gridColumn = 'span 1';
+      else lastCard.style.gridColumn = 'span 3';
+    }
+    fixLastCard();
+    window.addEventListener('resize', fixLastCard);
 
-  const handleBooking = (e: React.FormEvent) => {
-    e.preventDefault();
-    setBookingDone(true);
-  };
-
-  const today = new Date();
-  const dates = Array.from({ length: 14 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(today.getDate() + i);
-    return {
-      value: d.toISOString().split("T")[0],
-      label: d.toLocaleDateString("ru-RU", { day: "numeric", month: "short" }),
-      day: d.toLocaleDateString("ru-RU", { weekday: "short" }),
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', fixLastCard);
     };
-  });
+  }, []);
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const btn = e.currentTarget.querySelector('.form-submit') as HTMLButtonElement;
+    btn.textContent = '✓ Заявка отправлена! Скоро свяжемся.';
+    btn.style.background = '#437a22';
+    btn.disabled = true;
+  }
 
   return (
-    <div className="min-h-screen bg-white font-golos overflow-x-hidden">
-
-      {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-          <span className="font-cormorant text-2xl font-semibold gradient-text">Beauty Studio</span>
-
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map(l => (
-              <button
-                key={l.id}
-                onClick={() => scrollTo(l.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  activeNav === l.id
-                    ? "gradient-brand text-white shadow-md"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-purple-50"
-                }`}
-              >
-                {l.label}
-              </button>
-            ))}
+    <>
+      {/* HEADER */}
+      <header>
+        <div className="header-inner">
+          <div className="logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Логотип Александра косметолог">
+              <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M10 22 C10 14 16 10 16 10 C16 10 22 14 22 22" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <circle cx="16" cy="10" r="2.5" fill="var(--color-primary)"/>
+              <path d="M12 19 Q16 16 20 19" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            </svg>
+            Александра
           </div>
-
-          <button
-            onClick={() => scrollTo("booking")}
-            className="hidden md:block shimmer-btn text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Записаться
-          </button>
-
-          <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-            <Icon name={mobileOpen ? "X" : "Menu"} size={24} className="text-gray-700" />
-          </button>
-        </div>
-
-        {mobileOpen && (
-          <div className="md:hidden glass-white border-t border-white/30 px-4 py-4 flex flex-col gap-2">
-            {navLinks.map(l => (
-              <button
-                key={l.id}
-                onClick={() => scrollTo(l.id)}
-                className="text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-700 hover:bg-purple-50 transition-colors"
-              >
-                {l.label}
-              </button>
-            ))}
-            <button
-              onClick={() => scrollTo("booking")}
-              className="shimmer-btn text-white px-5 py-3 rounded-full text-sm font-semibold mt-2"
-            >
-              Записаться онлайн
+          <div className="header-actions">
+            <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
-          </div>
-        )}
-      </nav>
-
-      {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 gradient-brand opacity-90 z-0" />
-        <div
-          className="absolute inset-0 z-0 mix-blend-overlay opacity-30"
-          style={{ backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
-        <div className="absolute inset-0 z-0" style={{
-          background: "radial-gradient(ellipse at 70% 50%, rgba(92,53,204,0.5) 0%, transparent 60%)"
-        }} />
-
-        {/* decorative blobs */}
-        <div className="absolute top-20 right-10 w-64 h-64 rounded-full opacity-20 animate-float"
-          style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }} />
-        <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full opacity-15 animate-float"
-          style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", animationDelay: "2s" }} />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 glass text-white/90 px-4 py-2 rounded-full text-sm mb-6 animate-fade-up">
-              <Icon name="Sparkles" size={14} />
-              <span>Профессиональная косметология</span>
-            </div>
-            <h1 className="font-cormorant text-5xl md:text-7xl text-white font-light leading-tight mb-6 animate-fade-up animate-delay-100">
-              Красота,<br />
-              <span className="italic font-medium">которой доверяют</span>
-            </h1>
-            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-md animate-fade-up animate-delay-200">
-              Современные процедуры для вашей кожи. Индивидуальный подход, сертифицированные специалисты, результат, который заметят все.
-            </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up animate-delay-300">
-              <button
-                onClick={() => scrollTo("booking")}
-                className="glass text-white border border-white/30 px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 transition-all duration-300 hover:scale-105"
-              >
-                Записаться онлайн
-              </button>
-              <button
-                onClick={() => scrollTo("services")}
-                className="text-white/80 px-8 py-4 rounded-full text-base font-medium hover:text-white transition-colors flex items-center gap-2"
-              >
-                Услуги <Icon name="ArrowRight" size={16} />
-              </button>
-            </div>
-          </div>
-
-          <div className="hidden md:flex flex-col gap-4 animate-fade-up animate-delay-400">
-            <div className="glass rounded-3xl p-6 text-white">
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map(s => (
-                  <div key={s.value} className="text-center">
-                    <div className="font-cormorant text-4xl font-semibold text-gold">{s.value}</div>
-                    <div className="text-white/70 text-sm mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="glass rounded-3xl p-5 text-white flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full gradient-brand flex items-center justify-center flex-shrink-0 border-2 border-white/30">
-                <Icon name="Award" size={22} className="text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-sm">Сертифицированный косметолог</div>
-                <div className="text-white/60 text-xs mt-0.5">Диплом международного класса, 8 лет практики</div>
-              </div>
-            </div>
+            <a href="#form" className="header-cta">Уточнить свободные даты →</a>
           </div>
         </div>
+      </header>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce z-10">
-          <Icon name="ChevronDown" size={28} />
-        </div>
-      </section>
-
-      {/* STATS mobile */}
-      <section className="md:hidden gradient-brand py-8 px-4">
-        <div className="grid grid-cols-2 gap-6">
-          {stats.map(s => (
-            <div key={s.value} className="text-center text-white">
-              <div className="font-cormorant text-3xl font-semibold text-gold">{s.value}</div>
-              <div className="text-white/70 text-sm mt-1">{s.label}</div>
+      {/* БЛОК 1: HERO */}
+      <section className="hero" id="top">
+        <div className="hero-inner">
+          <div className="hero-content reveal">
+            <div className="hero-eyebrow">✦ Эстетическая косметология в Артёме</div>
+            <h1 className="hero-title">Твоя кожа заслуживает <em>большего</em></h1>
+            <p className="hero-subtitle">Эстетическая косметология в Артёме. Результат виден уже после первой процедуры — без боли, без операций, без «заметного вмешательства».</p>
+            <div className="hero-actions">
+              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+              <a href="#services" className="btn-ghost">Смотреть услуги</a>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="section-padding bg-gradient-to-b from-white to-purple-50/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-sm font-semibold tracking-widest uppercase gradient-text">Наши услуги</span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mt-2 text-gray-900">
-              Процедуры для вашей красоты
-            </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              Каждая процедура разработана для конкретного результата. Консультация — бесплатно.
-            </p>
+            <div className="hero-trust">
+              <div className="hero-trust-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>Более 200 довольных клиентов в Артёме</span>
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <div
-                key={s.title}
-                className={`hover-lift cursor-pointer rounded-3xl p-6 border transition-all duration-300 ${
-                  selectedService === s.title
-                    ? "gradient-brand text-white border-transparent shadow-2xl"
-                    : "bg-white border-purple-100 hover:border-purple-200"
-                }`}
-                onClick={() => {
-                  setSelectedService(s.title);
-                  scrollTo("booking");
-                }}
-                style={{ animationDelay: `${i * 0.08}s` }}
-              >
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${
-                  selectedService === s.title ? "bg-white/20" : "gradient-brand"
-                }`}>
-                  <Icon name={s.icon} size={22} className="text-white" fallback="Star" />
+          <div className="hero-visual reveal">
+            <div className="hero-card">
+              <div className="hero-card-badge">Популярно сегодня</div>
+              <div className="hero-card-title">Программа «Фарфоровая куколка»</div>
+              <div className="hero-card-text">Глубокий детокс + сияние кожи за один визит. Ультразвуковая чистка и фонофорез с детокс-капсулами.</div>
+              <div className="hero-card-stats">
+                <div className="stat-item">
+                  <div className="stat-num">1</div>
+                  <div className="stat-label">визит</div>
                 </div>
-                <h3 className={`font-semibold text-lg mb-2 ${selectedService === s.title ? "text-white" : "text-gray-900"}`}>
-                  {s.title}
-                </h3>
-                <p className={`text-sm leading-relaxed mb-4 ${selectedService === s.title ? "text-white/80" : "text-gray-500"}`}>
-                  {s.desc}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className={`font-semibold ${selectedService === s.title ? "text-gold" : "gradient-text"}`}>
-                    {s.price}
-                  </span>
-                  <span className={`text-xs flex items-center gap-1 ${selectedService === s.title ? "text-white/60" : "text-gray-400"}`}>
-                    <Icon name="Clock" size={12} /> {s.duration}
-                  </span>
+                <div className="stat-item">
+                  <div className="stat-num">0</div>
+                  <div className="stat-label">дискомфорта</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-num">7</div>
+                  <div className="stat-label">процедур</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-num">∞</div>
+                  <div className="stat-label">удовольствия</div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -inset-4 gradient-brand rounded-3xl opacity-10 blur-2xl" />
-            <img
-              src={HERO_IMG}
-              alt="О кабинете"
-              className="relative rounded-3xl w-full h-96 object-cover shadow-2xl"
-            />
-            <div className="absolute -bottom-6 -right-6 glass-white rounded-2xl p-5 shadow-xl border border-purple-100">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 gradient-brand rounded-full flex items-center justify-center">
-                  <Icon name="Shield" size={18} className="text-white" />
-                </div>
+      {/* БЛОК 2: БОЛЬ */}
+      <section className="pain-section" id="pain">
+        <div className="container">
+          <div className="section-header reveal">
+            <div className="section-eyebrow">Узнаёшь себя?</div>
+            <h2 className="section-title">Знакомые ощущения?</h2>
+          </div>
+          <div className="pain-grid">
+            <div className="pain-card reveal">
+              <div className="pain-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div className="pain-card-text">
+                <h3>Поры расширены, кожа тусклая</h3>
+                <p>Тональный крем не помогает, вечером лицо выглядит «уставшим» уже к полудню</p>
+              </div>
+            </div>
+            <div className="pain-card reveal">
+              <div className="pain-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div className="pain-card-text">
+                <h3>Овал «поплыл», появился второй подбородок</h3>
+                <p>Фотографии в профиль всё меньше нравятся, контуры лица стали менее чёткими</p>
+              </div>
+            </div>
+            <div className="pain-card reveal">
+              <div className="pain-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div className="pain-card-text">
+                <h3>Боишься инъекций, но хочешь выглядеть свежо</h3>
+                <p>Не готова к уколам и операциям, но хочется видимого, долгосрочного результата</p>
+              </div>
+            </div>
+            <div className="pain-card reveal">
+              <div className="pain-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+              </div>
+              <div className="pain-card-text">
+                <h3>Руки выдают возраст</h3>
+                <p>Даже когда лицо выглядит хорошо, руки «рассказывают» другую историю</p>
+              </div>
+            </div>
+          </div>
+          <div className="pain-conclusion reveal">
+            <p>Ты не одна. 8 из 10 женщин, которые приходят впервые, говорят именно это.<br/>
+            <strong>Хорошая новость: всё это решается без скальпеля и без страха.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      {/* БЛОК 3: О МАСТЕРЕ */}
+      <section id="about">
+        <div className="container">
+          <div className="about-inner">
+            <div className="about-photo reveal">
+              <div className="about-photo-placeholder">
                 <div>
-                  <div className="font-semibold text-sm text-gray-900">Безопасность</div>
-                  <div className="text-xs text-gray-500">Сертифицированные препараты</div>
+                  <svg width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{margin:'0 auto var(--space-4)'}}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <p style={{fontSize:'var(--text-sm)'}}>Фото мастера</p>
                 </div>
+              </div>
+              <div className="about-photo-badge">
+                <div className="about-name">Александра</div>
+                <div className="about-role">Косметолог · Артём</div>
               </div>
             </div>
-          </div>
-
-          <div>
-            <span className="text-sm font-semibold tracking-widest uppercase gradient-text">О нас</span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mt-2 mb-6 text-gray-900 leading-tight">
-              Кабинет, где<br /><span className="italic">заботятся о вас</span>
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Beauty Studio — это современный косметологический кабинет, где каждая процедура подбирается индивидуально. Мы работаем только с сертифицированными препаратами и оборудованием ведущих брендов.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              Наш специалист имеет международный сертификат и более 8 лет практического опыта. Вы в надёжных руках.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: "Award", text: "Международный сертификат" },
-                { icon: "Microscope", text: "Медицинское оборудование" },
-                { icon: "Users", text: "Индивидуальный подход" },
-                { icon: "Clock", text: "Запись онлайн 24/7" },
-              ].map(f => (
-                <div key={f.text} className="flex items-center gap-3 p-3 rounded-2xl bg-purple-50/50">
-                  <div className="w-8 h-8 gradient-brand rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name={f.icon} size={15} className="text-white" fallback="Check" />
-                  </div>
-                  <span className="text-sm text-gray-700 font-medium">{f.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section id="portfolio" className="section-padding bg-gradient-to-b from-purple-50/30 to-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-sm font-semibold tracking-widest uppercase gradient-text">Результаты</span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mt-2 text-gray-900">
-              До и после
-            </h2>
-            <p className="text-gray-500 mt-4">Реальные результаты наших клиентов</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {portfolio.map((p, i) => (
-              <div key={i} className="hover-lift rounded-3xl overflow-hidden border border-purple-100 bg-white shadow-sm">
-                <div className="grid grid-cols-2 h-56">
-                  <div className="relative flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100">
-                    <div className="text-center">
-                      <Icon name="ImageOff" size={28} className="text-purple-300 mx-auto mb-2" />
-                      <span className="text-xs text-purple-400 font-medium">До</span>
-                    </div>
-                    <div className="absolute top-2 left-2 bg-white/80 text-xs px-2 py-1 rounded-full text-gray-600">ДО</div>
-                  </div>
-                  <div className="relative flex items-center justify-center bg-gradient-to-br from-pink-100 to-rose-100">
-                    <div className="text-center">
-                      <Icon name="ImageOff" size={28} className="text-pink-300 mx-auto mb-2" />
-                      <span className="text-xs text-pink-400 font-medium">После</span>
-                    </div>
-                    <div className="absolute top-2 right-2 gradient-brand text-white text-xs px-2 py-1 rounded-full">ПОСЛЕ</div>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="font-semibold text-gray-900 mb-1">{p.label}</div>
-                  <div className="text-sm text-gray-500 flex items-center gap-1">
-                    <Icon name="TrendingUp" size={13} className="text-pink-400" />
-                    {p.result}
-                  </div>
-                </div>
+            <div className="about-text reveal">
+              <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
+              <h2 className="about-title">Привет, я — Александра</h2>
+              <div className="about-principle">
+                «Кожа должна выглядеть ухоженно, а не "сделанно"»
               </div>
-            ))}
-          </div>
-
-          <p className="text-center text-sm text-gray-400 mt-8">
-            * Фотографии клиентов размещаются с их письменного согласия
-          </p>
-        </div>
-      </section>
-
-      {/* BOOKING */}
-      <section id="booking" className="section-padding relative overflow-hidden">
-        <div className="absolute inset-0 gradient-brand opacity-95" />
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }} />
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-widest uppercase text-white/60">Онлайн-запись</span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mt-2 text-white">
-              Запишитесь прямо сейчас
-            </h2>
-            <p className="text-white/70 mt-3">Выберите процедуру, дату и удобное время</p>
-          </div>
-
-          {bookingDone ? (
-            <div className="glass rounded-3xl p-12 text-center">
-              <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6">
-                <Icon name="CheckCircle" size={40} className="text-white" />
-              </div>
-              <h3 className="font-cormorant text-3xl text-white font-medium mb-3">Вы записаны!</h3>
-              <p className="text-white/70 mb-2">Ждём вас <strong className="text-white">{selectedDate}</strong> в <strong className="text-white">{selectedTime}</strong></p>
-              <p className="text-white/60 text-sm">Мы отправим подтверждение и напоминание</p>
-              <button
-                className="mt-8 bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
-                onClick={() => { setBookingDone(false); setName(""); setPhone(""); setSelectedDate(""); setSelectedTime(""); }}
-              >
-                Записаться ещё раз
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleBooking} className="glass rounded-3xl p-6 md:p-10 space-y-6">
-              {/* Service */}
-              <div>
-                <label className="text-white/80 text-sm font-medium mb-3 block">Процедура</label>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {services.map(s => (
-                    <button
-                      key={s.title}
-                      type="button"
-                      onClick={() => setSelectedService(s.title)}
-                      className={`px-3 py-2 rounded-2xl text-sm font-medium text-left transition-all duration-200 ${
-                        selectedService === s.title
-                          ? "bg-white text-purple-700 shadow-lg"
-                          : "bg-white/10 text-white/70 hover:bg-white/20"
-                      }`}
-                    >
-                      {s.title}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Date */}
-              <div>
-                <label className="text-white/80 text-sm font-medium mb-3 block">Дата</label>
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {dates.map(d => (
-                    <button
-                      key={d.value}
-                      type="button"
-                      onClick={() => setSelectedDate(d.label)}
-                      className={`flex-shrink-0 flex flex-col items-center px-4 py-3 rounded-2xl transition-all duration-200 ${
-                        selectedDate === d.label
-                          ? "bg-white text-purple-700 shadow-lg"
-                          : "bg-white/10 text-white/70 hover:bg-white/20"
-                      }`}
-                    >
-                      <span className="text-xs uppercase">{d.day}</span>
-                      <span className="font-semibold text-sm mt-1">{d.label}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Time */}
-              <div>
-                <label className="text-white/80 text-sm font-medium mb-3 block">Время</label>
-                <div className="grid grid-cols-5 gap-2">
-                  {times.map(t => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setSelectedTime(t)}
-                      className={`py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                        selectedTime === t
-                          ? "bg-white text-purple-700 shadow-lg"
-                          : "bg-white/10 text-white/70 hover:bg-white/20"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Contacts */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-white/80 text-sm font-medium mb-2 block">Ваше имя</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    placeholder="Анна"
-                    required
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-2xl px-4 py-3 focus:outline-none focus:border-white/50 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-white/80 text-sm font-medium mb-2 block">Телефон</label>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                    placeholder="+7 (999) 123-45-67"
-                    required
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-2xl px-4 py-3 focus:outline-none focus:border-white/50 transition-colors"
-                  />
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                disabled={!selectedService || !selectedDate || !selectedTime}
-                className="w-full bg-white text-purple-700 py-4 rounded-2xl font-bold text-base hover:bg-white/90 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] shadow-lg"
-              >
-                Подтвердить запись
-              </button>
-              <p className="text-center text-white/40 text-xs">
-                Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+              <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'var(--space-6)',lineHeight:'1.7'}}>
+                Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
-            </form>
-          )}
+              <ul className="about-list">
+                <li>Только сертифицированные аппараты и профессиональная косметика</li>
+                <li>Индивидуальный протокол для каждого клиента</li>
+                <li>Уютный кабинет — без очередей и спешки</li>
+              </ul>
+              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold tracking-widest uppercase gradient-text">FAQ</span>
-            <h2 className="font-cormorant text-4xl font-light mt-2 text-gray-900">Частые вопросы</h2>
+      {/* БЛОК 4: УСЛУГИ */}
+      <section className="services-section" id="services">
+        <div className="container">
+          <div className="section-header reveal">
+            <div className="section-eyebrow">Услуги</div>
+            <h2 className="section-title">Что я предлагаю</h2>
+            <p className="section-subtitle">7 проверенных методик — от деликатного ухода до аппаратного омоложения</p>
           </div>
+          <div className="services-grid">
+            <div className="service-card reveal">
+              <div className="service-num">01</div>
+              <div className="service-title">Чистка лица</div>
+              <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
+              <div className="service-result">✦ Чистая, свежая кожа уже в день процедуры</div>
+            </div>
+            <div className="service-card reveal">
+              <div className="service-num">02</div>
+              <div className="service-title">Гидропилинг</div>
+              <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, одновременно насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
+              <div className="service-result">✦ Сужение пор, выравнивание рельефа, сияние</div>
+            </div>
+            <div className="service-card reveal">
+              <div className="service-num">03</div>
+              <div className="service-title">Пилинги</div>
+              <p className="service-desc">Химические пилинги на кислотах (гликолевый, салициловый, миндальный, ретиноевый) — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
+              <div className="service-result">✦ Обновлённая, ровная кожа с видимым сиянием</div>
+            </div>
+            <div className="service-card reveal">
+              <div className="service-num">04</div>
+              <div className="service-title">Микронидлинг (Дермапен)</div>
+              <p className="service-desc">Микроиглы создают каналы в коже — это запускает выработку собственного коллагена и эластина. Одновременно вводятся лечебные сыворотки глубоко в дерму. Работает там, куда крем никогда не доберётся.</p>
+              <div className="service-result">✦ Подтяжка, уменьшение морщин, устранение постакне</div>
+            </div>
+            <div className="service-card reveal">
+              <div className="service-num">05</div>
+              <div className="service-title">Массаж лица</div>
+              <p className="service-desc">Буккальный, скульптурный, лимфодренажный — выбираем технику под твою задачу. Подтягивает овал, снимает отёки, возвращает чёткие контуры без единого укола.</p>
+              <div className="service-result">✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
+            </div>
+            <div className="service-card reveal">
+              <div className="service-num">06</div>
+              <div className="service-title">Микротоки</div>
+              <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
+              <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
+            </div>
+            <div className="service-card reveal" data-wide style={{gridColumn:'span 3'}}>
+              <div className="service-num">07</div>
+              <div className="service-title">РФ-лифтинг</div>
+              <p className="service-desc" style={{maxWidth:'60ch'}}>Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается процесс омоложения изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
+              <div className="service-result">✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
+            </div>
+          </div>
+          <div className="services-cta-row reveal">
+            <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+          </div>
+        </div>
+      </section>
 
-          <div className="space-y-3">
-            {faqs.map((f, i) => (
-              <div
-                key={i}
-                className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
-                  openFaq === i ? "border-purple-200 bg-purple-50/50" : "border-gray-100 bg-white"
-                }`}
-              >
-                <button
-                  className="w-full text-left px-6 py-5 flex items-center justify-between font-medium text-gray-900"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  <span>{f.q}</span>
-                  <Icon
-                    name={openFaq === i ? "ChevronUp" : "ChevronDown"}
-                    size={18}
-                    className={`flex-shrink-0 ml-4 transition-colors ${openFaq === i ? "text-purple-500" : "text-gray-400"}`}
-                  />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed">{f.a}</div>
-                )}
+      {/* БЛОК 5: ПРОГРАММЫ */}
+      <section id="programs">
+        <div className="container">
+          <div className="section-header reveal">
+            <div className="section-eyebrow">Уходовые программы</div>
+            <h2 className="section-title">Готовые программы — для тех, кто хочет максимум</h2>
+            <p className="section-subtitle">Если хочешь не просто одну процедуру, а полноценный результат — выбирай программу. Эффект от процедур усиливает друг друга.</p>
+          </div>
+          <div className="programs-grid">
+            <div className="program-card reveal">
+              <div className="program-badge">Хит</div>
+              <div className="program-title">🌿 Релакс</div>
+              <div className="program-composition">Ультразвуковая чистка + пилинг + массаж лица + маска</div>
+              <p className="program-desc">Идеальная программа для тех, кто давно не баловал себя уходом или просто хочет «перезагрузиться». Полный цикл за один визит: очищение, обновление, расслабление, питание.</p>
+              <p className="program-fits"><strong>Подходит:</strong> всем типам кожи, особенно уставшей и тусклой.</p>
+              <div className="program-effect">✨ Ощущение после: как будто поменяла кожу</div>
+            </div>
+            <div className="program-card reveal">
+              <div className="program-badge">Сияние</div>
+              <div className="program-title">🤍 Фарфоровая куколка</div>
+              <div className="program-composition">Ультразвуковая чистка + фонофорез с детокс-капсулами</div>
+              <p className="program-desc">Аппаратная программа для глубокого детокса и сияния. Ультразвук открывает каналы в коже, фонофорез доставляет детокс-капсулы точно в дерму. Кожа становится светлой, ровной и буквально светится изнутри.</p>
+              <p className="program-fits"><strong>Подходит:</strong> тусклая, пористая кожа, усталость после стресса.</p>
+              <div className="program-effect">✨ Фарфоровая текстура, детокс, внутреннее сияние</div>
+            </div>
+            <div className="program-card reveal">
+              <div className="program-badge">Интенсив</div>
+              <div className="program-title">💧 Глубокое увлажнение</div>
+              <div className="program-composition">Ультразвуковая чистка + пилинг + микронидлинг</div>
+              <p className="program-desc">Трёхступенчатая программа интенсивного обновления. Сначала очищаем и подготавливаем кожу, затем дермапен доставляет сыворотку с гиалуроновой кислотой в глубокие слои. Эффект держится неделями.</p>
+              <p className="program-fits"><strong>Подходит:</strong> сухая, обезвоженная кожа, первые признаки старения.</p>
+              <div className="program-effect">✨ Кожа как после капельницы — наполненная, упругая, молодая</div>
+            </div>
+            <div className="program-card reveal">
+              <div className="program-badge">Уход</div>
+              <div className="program-title">💅 Спа для рук</div>
+              <div className="program-composition">Пилинг + питательная маска + массаж рук + уход за кутикулой</div>
+              <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает уход за кутикулой, пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>
+              <p className="program-fits"><strong>Подходит:</strong> для регулярного ухода, особенно в холодное время года.</p>
+              <div className="program-effect">✨ Молодые, ухоженные руки после первого сеанса</div>
+            </div>
+          </div>
+          <div className="services-cta-row reveal">
+            <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* БЛОК 6: ПОЧЕМУ Я */}
+      <section className="why-section" id="why">
+        <div className="container">
+          <div className="why-inner">
+            <div>
+              <div className="section-eyebrow reveal">Почему я</div>
+              <h2 className="section-title reveal" style={{marginBottom:'var(--space-8)'}}>Почему клиенты возвращаются снова</h2>
+              <ul className="why-list">
+                <li className="why-item reveal">
+                  <div className="why-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <div className="why-item-text">
+                    <h3>Индивидуальный подход</h3>
+                    <p>Никаких шаблонных протоколов — только твоя кожа, твои задачи и твой результат</p>
+                  </div>
+                </li>
+                <li className="why-item reveal">
+                  <div className="why-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div className="why-item-text">
+                    <h3>Честность</h3>
+                    <p>Честно скажу, что тебе нужно, а что — нет. Без давления и лишних трат</p>
+                  </div>
+                </li>
+                <li className="why-item reveal">
+                  <div className="why-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  </div>
+                  <div className="why-item-text">
+                    <h3>Только сертифицированное оборудование</h3>
+                    <p>Аппараты с подтверждённой эффективностью и профессиональная косметика</p>
+                  </div>
+                </li>
+                <li className="why-item reveal">
+                  <div className="why-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </div>
+                  <div className="why-item-text">
+                    <h3>Комфортно и безопасно</h3>
+                    <p>Как у хорошей подруги — но с сертификатом. Без стресса и спешки</p>
+                  </div>
+                </li>
+              </ul>
+              <a href="#form" className="btn-primary reveal">Уточнить свободные даты →</a>
+            </div>
+            <div className="why-visual reveal">
+              <div className="why-stat-card">
+                <div className="why-stat-num">200+</div>
+                <div className="why-stat-label">довольных клиентов</div>
               </div>
-            ))}
+              <div className="why-stat-card">
+                <div className="why-stat-num">7</div>
+                <div className="why-stat-label">аппаратных и ручных методик</div>
+              </div>
+              <div className="why-stat-card">
+                <div className="why-stat-num">98%</div>
+                <div className="why-stat-label">клиентов приходят снова</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CONTACTS */}
-      <section id="contacts" className="section-padding bg-gradient-to-b from-purple-50/30 to-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <span className="text-sm font-semibold tracking-widest uppercase gradient-text">Контакты</span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mt-2 mb-8 text-gray-900">
-              Мы всегда<br /><span className="italic">на связи</span>
-            </h2>
-
-            <div className="space-y-5">
-              {[
-                { icon: "MapPin", label: "Адрес", value: "г. Москва, ул. Красоты, 12, офис 34" },
-                { icon: "Phone", label: "Телефон", value: "+7 (999) 123-45-67" },
-                { icon: "Mail", label: "Email", value: "hello@beautystudio.ru" },
-                { icon: "Clock", label: "Режим работы", value: "Пн–Сб: 10:00–20:00, Вс: 11:00–18:00" },
-              ].map(c => (
-                <div key={c.label} className="flex items-start gap-4">
-                  <div className="w-11 h-11 gradient-brand rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Icon name={c.icon} size={18} className="text-white" fallback="Info" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-400 font-medium uppercase tracking-wide">{c.label}</div>
-                    <div className="text-gray-800 font-medium mt-0.5">{c.value}</div>
-                  </div>
+      {/* БЛОК 7: ОТЗЫВЫ */}
+      <section id="reviews">
+        <div className="container">
+          <div className="section-header reveal">
+            <div className="section-eyebrow">Отзывы</div>
+            <h2 className="section-title">Что говорят клиенты</h2>
+          </div>
+          <div className="reviews-grid">
+            <div className="review-card reveal">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">«Пришла с жирной кожей и комедонами — ушла с ощущением новой кожи. Через курс из 5 процедур поры уменьшились вдвое. Теперь хожу только сюда»</p>
+              <div className="review-author">
+                <div className="review-avatar">А</div>
+                <div>
+                  <div className="review-name">Алина</div>
+                  <div className="review-meta">28 лет · Чистка лица</div>
                 </div>
-              ))}
+              </div>
             </div>
-
-            <div className="flex gap-3 mt-8">
-              {[
-                { icon: "Instagram", label: "Instagram" },
-                { icon: "MessageCircle", label: "WhatsApp" },
-                { icon: "Send", label: "Telegram" },
-              ].map(s => (
-                <button
-                  key={s.label}
-                  className="w-11 h-11 gradient-brand rounded-2xl flex items-center justify-center hover:scale-110 transition-transform shadow-md"
-                >
-                  <Icon name={s.icon} size={18} className="text-white" fallback="ExternalLink" />
-                </button>
-              ))}
+            <div className="review-card reveal">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">«Боялась микронидлинга как огня. Оказалось — почти не больно, а результат шокировал. Постакне, которое не уходило 3 года, прошло за 4 сеанса»</p>
+              <div className="review-author">
+                <div className="review-avatar">Е</div>
+                <div>
+                  <div className="review-name">Екатерина</div>
+                  <div className="review-meta">34 года · Микронидлинг</div>
+                </div>
+              </div>
+            </div>
+            <div className="review-card reveal">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">«РФ-лифтинг — моя находка. Второй подбородок ушёл, овал подтянулся. Подруги спрашивают, что я сделала. Говорю: просто нашла хорошего косметолога»</p>
+              <div className="review-author">
+                <div className="review-avatar">М</div>
+                <div>
+                  <div className="review-name">Марина</div>
+                  <div className="review-meta">42 года · РФ-лифтинг</div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="rounded-3xl overflow-hidden bg-purple-50 h-80 flex items-center justify-center border border-purple-100 relative">
-            <div className="text-center">
-              <Icon name="Map" size={48} className="text-purple-200 mx-auto mb-3" />
-              <p className="text-purple-300 font-medium">Карта будет здесь</p>
-              <p className="text-purple-200 text-sm mt-1">г. Москва, ул. Красоты, 12</p>
+      {/* БЛОК 8: АКЦИЯ */}
+      <section className="promo-section" id="promo">
+        <div className="container">
+          <div className="promo-inner">
+            <div className="reveal">
+              <div className="section-eyebrow">Специальное предложение</div>
+              <h2 className="promo-title">Запишись сегодня — и получи бонус</h2>
+              <p className="promo-text">Первичная консультация — бесплатно. Я изучу состояние кожи, отвечу на все вопросы и составлю индивидуальный план ухода — без давления и навязывания.</p>
+              <ul className="promo-perks">
+                <li>Бесплатная первичная консультация</li>
+                <li>Скидка 10% при записи онлайн</li>
+                <li>Индивидуальный план ухода в подарок</li>
+              </ul>
+              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
             </div>
-            <div className="absolute bottom-4 right-4">
-              <button
-                onClick={() => scrollTo("booking")}
-                className="shimmer-btn text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg"
-              >
-                Записаться
-              </button>
+            <div className="promo-gift reveal">
+              <div className="promo-gift-emoji">🎁</div>
+              <div className="promo-gift-title">Бесплатная консультация</div>
+              <p className="promo-gift-text">Узнай, какие процедуры подойдут именно твоей коже — без обязательств и давления</p>
+              <a href="#form" className="btn-primary" style={{width:'100%',justifyContent:'center'}}>Записаться →</a>
+              <p className="promo-timer">⏳ Количество мест ограничено — свободные окошки разбирают быстро</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* БЛОК 9: ФОРМА */}
+      <section className="form-section" id="form">
+        <div className="container">
+          <div className="section-header reveal">
+            <div className="section-eyebrow">Запись</div>
+            <h2 className="section-title">Начни заботиться о себе прямо сейчас</h2>
+            <p className="section-subtitle">Не жди «идеального момента». Твоя кожа начнёт меняться с первого визита.</p>
+          </div>
+          <div className="form-wrap reveal">
+            <div className="form-title">Оставь заявку</div>
+            <p className="form-subtitle">Отвечу в течение 1 часа и подберём удобное время</p>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label className="form-label" htmlFor="name">Ваше имя</label>
+                <input className="form-input" type="text" id="name" placeholder="Как к вам обращаться?" required />
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="phone">Телефон</label>
+                <input className="form-input" type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="service">Какая процедура интересует</label>
+                <select className="form-select" id="service">
+                  <option value="">— Выберите процедуру —</option>
+                  <optgroup label="Процедуры">
+                    <option>Чистка лица</option>
+                    <option>Гидропилинг (аппаратная вакуумная чистка)</option>
+                    <option>Пилинги</option>
+                    <option>Микронидлинг (Дермапен)</option>
+                    <option>Массаж лица</option>
+                    <option>Микротоки</option>
+                    <option>РФ-лифтинг</option>
+                  </optgroup>
+                  <optgroup label="Уходовые программы">
+                    <option>Программа «Релакс»</option>
+                    <option>Программа «Фарфоровая куколка»</option>
+                    <option>Программа «Глубокое увлажнение»</option>
+                    <option>Спа для рук</option>
+                  </optgroup>
+                  <option>Не знаю — нужна консультация</option>
+                </select>
+              </div>
+              <button type="submit" className="form-submit">[ ЗАПИСАТЬСЯ БЕСПЛАТНО → ]</button>
+              <div className="form-divider">или</div>
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className="tg-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
+                Написать в Telegram
+              </a>
+              <p className="form-privacy">🔒 Данные защищены. Не передаём третьим лицам.</p>
+            </form>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="gradient-brand py-8 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-cormorant text-2xl font-semibold text-white">Beauty Studio</span>
-          <p className="text-white/50 text-sm">© 2025 Beauty Studio. Все права защищены.</p>
-          <button
-            onClick={() => scrollTo("booking")}
-            className="bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full text-sm hover:bg-white/20 transition-colors"
-          >
-            Записаться онлайн
-          </button>
+      <footer>
+        <div className="footer-inner">
+          <div>
+            <div className="footer-logo">Александра</div>
+            <p className="footer-desc">Эстетическая косметология в Артёме. Результат — без боли и страха.</p>
+            <div className="footer-social">
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
+              </a>
+              <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.26h-1.7c-.64 0-.84-.51-1.99-1.67-1-.98-1.44-.98-1.7-.98-.35 0-.45.1-.45.6v1.52c0 .43-.14.69-1.26.69-1.86 0-3.92-1.12-5.37-3.22C4.47 9.82 4 7.81 4 7.38c0-.26.1-.5.6-.5h1.7c.45 0 .62.2.79.68.87 2.5 2.32 4.69 2.92 4.69.22 0 .32-.1.32-.65V9.14c-.07-1.17-.68-1.27-.68-1.69 0-.2.16-.4.42-.4h2.68c.38 0 .51.2.51.64v3.44c0 .38.17.51.28.51.22 0 .41-.13.82-.54 1.27-1.42 2.18-3.6 2.18-3.6.12-.26.32-.5.77-.5h1.7c.51 0 .62.26.51.64-.22 1.01-2.37 4.06-2.37 4.06-.19.3-.26.44 0 .77.19.26.81.8 1.22 1.29.76.87 1.34 1.6 1.5 2.1.15.51-.12.77-.63.77z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div className="footer-heading">Контакты</div>
+            <ul className="footer-contact-list">
+              <li>📍 г. Артём, ул. Фрунзе, 60</li>
+              <li>📞 <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a></li>
+              <li>✈️ <a href="https://t.me/" target="_blank" style={{color:'var(--color-primary)'}}>Telegram-канал</a></li>
+            </ul>
+          </div>
+          <div>
+            <div className="footer-heading">Услуги</div>
+            <ul className="footer-contact-list">
+              <li><a href="#services" style={{color:'var(--color-text-muted)'}}>Чистка лица</a></li>
+              <li><a href="#services" style={{color:'var(--color-text-muted)'}}>Гидропилинг</a></li>
+              <li><a href="#services" style={{color:'var(--color-text-muted)'}}>Микронидлинг</a></li>
+              <li><a href="#services" style={{color:'var(--color-text-muted)'}}>РФ-лифтинг</a></li>
+              <li><a href="#programs" style={{color:'var(--color-text-muted)'}}>Уходовые программы</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p className="footer-legal">© 2026 Александра · Эстетическая косметология · Артём</p>
+          <p className="footer-legal">ИНН / ОГРНИП: [укажите]</p>
+        </div>
+        <div className="footer-warn">
+          ⚠️ Имеются противопоказания. Требуется консультация специалиста. Процедуры выполняются после личной консультации и оценки состояния кожи.
         </div>
       </footer>
-    </div>
+    </>
   );
 }

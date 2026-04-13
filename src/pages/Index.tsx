@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Index() {
   const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
+  const [agreed, setAgreed] = useState(false);
 
   useEffect(() => {
     // Dark mode toggle
@@ -493,18 +494,27 @@ export default function Index() {
                   <option>Не знаю — нужна консультация</option>
                 </select>
               </div>
-              <button type="submit" className="form-submit">[ ЗАПИСАТЬСЯ БЕСПЛАТНО → ]</button>
+              <label style={{display:'flex',alignItems:'flex-start',gap:'var(--space-3)',cursor:'pointer',marginBottom:'var(--space-4)',marginTop:'var(--space-2)'}}>
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={e => setAgreed(e.target.checked)}
+                  style={{width:18,height:18,flexShrink:0,marginTop:2,accentColor:'var(--color-primary)',cursor:'pointer'}}
+                />
+                <span style={{fontSize:'var(--text-xs)',color:'var(--color-text-muted)',lineHeight:1.6}}>
+                  Я ознакомилась с{' '}
+                  <button type="button" onClick={() => setModal('privacy')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>политикой конфиденциальности</button>
+                  {' '}и даю{' '}
+                  <button type="button" onClick={() => setModal('consent')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>согласие на обработку персональных данных</button>
+                </span>
+              </label>
+              <button type="submit" className="form-submit" disabled={!agreed} style={{opacity: agreed ? 1 : 0.45, cursor: agreed ? 'pointer' : 'not-allowed', transition:'opacity var(--transition)'}}>[ ЗАПИСАТЬСЯ БЕСПЛАТНО → ]</button>
               <div className="form-divider">или</div>
               <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className="tg-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
                 Написать в Telegram
               </a>
-              <p className="form-privacy">
-                🔒 Нажимая кнопку, вы соглашаетесь с{' '}
-                <button type="button" onClick={() => setModal('privacy')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>политикой конфиденциальности</button>
-                {' '}и даёте{' '}
-                <button type="button" onClick={() => setModal('consent')} style={{color:'var(--color-primary)',textDecoration:'underline',background:'none',border:'none',cursor:'pointer',font:'inherit',padding:0}}>согласие на обработку персональных данных</button>
-              </p>
+              <p className="form-privacy">🔒 Данные защищены. Не передаём третьим лицам.</p>
             </form>
           </div>
         </div>

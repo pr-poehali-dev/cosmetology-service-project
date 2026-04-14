@@ -209,67 +209,46 @@ export default function Index() {
           </div>
           <div className="services-grid">
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">01</div>
-                <div className="service-title">Чистка лица</div>
-                <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
-                <div className="service-result">✦ Чистая, свежая кожа уже в день процедуры</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">01</div>
+              <div className="service-title">Чистка лица</div>
+              <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
+              <div className="service-result">✦ Чистая, свежая кожа уже в день процедуры</div>
             </div>
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">02</div>
-                <div className="service-title">Гидропилинг</div>
-                <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
-                <div className="service-result">✦ Сужение пор, выравнивание рельефа, сияние</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">02</div>
+              <div className="service-title">Гидропилинг</div>
+              <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
+              <div className="service-result">✦ Сужение пор, выравнивание рельефа, сияние</div>
             </div>
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">03</div>
-                <div className="service-title">Пилинги</div>
-                <p className="service-desc">Химические пилинги на кислотах — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
-                <div className="service-result">✦ Обновлённая, ровная кожа с видимым сиянием</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">03</div>
+              <div className="service-title">Пилинги</div>
+              <p className="service-desc">Химические пилинги на кислотах — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
+              <div className="service-result">✦ Обновлённая, ровная кожа с видимым сиянием</div>
             </div>
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">04</div>
-                <div className="service-title">Микронидлинг (Дермапен)</div>
-                <p className="service-desc">Микроиглы запускают выработку коллагена и эластина. Лечебные сыворотки вводятся глубоко в дерму — туда, куда крем никогда не доберётся.</p>
-                <div className="service-result">✦ Подтяжка, уменьшение морщин, устранение постакне</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">04</div>
+              <div className="service-title">Микронидлинг (Дермапен)</div>
+              <p className="service-desc">Микроиглы запускают выработку коллагена и эластина. Лечебные сыворотки вводятся глубоко в дерму — туда, куда крем никогда не доберётся.</p>
+              <div className="service-result">✦ Подтяжка, уменьшение морщин, устранение постакне</div>
             </div>
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">05</div>
-                <div className="service-title">Массаж лица</div>
-                <p className="service-desc">Буккальный, скульптурный, лимфодренажный — выбираем технику под твою задачу. Подтягивает овал, снимает отёки, возвращает чёткие контуры без единого укола.</p>
-                <div className="service-result">✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">05</div>
+              <div className="service-title">Массаж лица</div>
+              <p className="service-desc">Буккальный, скульптурный, лимфодренажный — выбираем технику под твою задачу. Подтягивает овал, снимает отёки, возвращает чёткие контуры без единого укола.</p>
+              <div className="service-result">✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
             </div>
             <div className="service-card reveal">
-              <div className="service-card-body">
-                <div className="service-num">06</div>
-                <div className="service-title">Микротоки</div>
-                <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
-                <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">06</div>
+              <div className="service-title">Микротоки</div>
+              <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
+              <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
             </div>
             <div className="service-card reveal service-card--wide">
-              <div className="service-card-body">
-                <div className="service-num">07</div>
-                <div className="service-title">РФ-лифтинг</div>
-                <p className="service-desc">Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается омоложение изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
-                <div className="service-result">✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
-              </div>
-              <div className="service-photo-slot"><span>Фото</span></div>
+              <div className="service-num">07</div>
+              <div className="service-title">РФ-лифтинг</div>
+              <p className="service-desc">Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается омоложение изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
+              <div className="service-result">✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
             </div>
           </div>
           <div className="services-cta-row reveal">

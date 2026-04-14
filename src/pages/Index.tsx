@@ -64,11 +64,8 @@ export default function Index() {
       <header>
         <div className="header-inner">
           <div className="logo">
-            <img src="https://cdn.poehali.dev/files/96710f67-2945-4d7a-8537-a866ce300658.png" alt="SO студия красоты" style={{width: 44, height: 44, objectFit: 'contain', flexShrink: 0}} />
-            <div style={{display: 'flex', flexDirection: 'column', lineHeight: 1.1}}>
-              <span style={{fontFamily: 'var(--font-display)', fontSize: 'var(--text-base)', fontWeight: 600, letterSpacing: '0.01em'}}>SO студия красоты</span>
-              <span style={{fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.12em', color: 'var(--color-text-muted)', textTransform: 'uppercase'}}>Эстетическая косметология</span>
-            </div>
+            <img src="https://cdn.poehali.dev/files/96710f67-2945-4d7a-8537-a866ce300658.png" alt="SO студия красоты" style={{width: 52, height: 52, objectFit: 'contain', flexShrink: 0}} />
+            <span style={{fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.12em', color: 'var(--color-text-muted)', textTransform: 'uppercase'}}>Эстетическая косметология</span>
           </div>
           <div className="header-actions">
             <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">

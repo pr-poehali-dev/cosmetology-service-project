@@ -188,7 +188,7 @@ export default function Index() {
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
               <h2 className="about-title">Привет, я —<br/>Александра</h2>
               <div className="about-principle">
-                «Кожа должна выглядеть ухоженно, а не "сделано"»
+                «Кожа должна выглядеть ухоженно, а не "сделанно"»
               </div>
               <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'var(--space-6)',lineHeight:'1.7'}}>
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.

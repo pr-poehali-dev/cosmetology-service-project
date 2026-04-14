@@ -178,8 +178,8 @@ export default function Index() {
         <div className="container">
           <div className="about-inner">
             <div className="about-photo reveal">
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/07b0e591-0611-4bc6-8573-a132beee4da7.png" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top center',display:'block'}} />
-              <div className="about-photo-badge">
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/6bffd02a-ba89-4168-9cb4-3098f8bbf26f.png" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center 15%',display:'block'}} />
+              <div className="about-photo-badge" style={{bottom: '30%'}}>
                 <div className="about-name">Александра</div>
                 <div className="about-role">Косметолог · Артём</div>
               </div>

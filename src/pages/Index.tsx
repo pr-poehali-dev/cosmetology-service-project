@@ -208,10 +208,17 @@ export default function Index() {
             <p className="section-subtitle">7 проверенных методик — от деликатного ухода до аппаратного омоложения</p>
           </div>
           <div className="services-grid">
-            <div className="service-card reveal">
-              <div className="service-num">01</div>
-              <div className="service-title">Чистка лица</div>
-              <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
+            <div className="service-card reveal" style={{position:'relative', overflow:'hidden'}}>
+              <div style={{paddingRight:'45%'}}>
+                <div className="service-num">01</div>
+                <div className="service-title">Чистка лица</div>
+                <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
+              </div>
+              <img
+                src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/3d252354-5031-4a6c-aea5-5c7a02c7c218.png"
+                alt="Чистка лица"
+                style={{position:'absolute', top:0, right:0, width:'42%', bottom:'calc(var(--space-5) * 2 + 1.2em + 1px)', objectFit:'cover', objectPosition:'center top'}}
+              />
               <div className="service-result">✦ Чистая, свежая кожа уже в день процедуры</div>
             </div>
             <div className="service-card reveal">

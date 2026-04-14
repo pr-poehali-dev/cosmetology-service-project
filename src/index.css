@@ -743,29 +743,38 @@ header {
 
 /* ===== SERVICES ===== */
 .services-section {
-  background: var(--color-surface);
+  background: var(--color-surface-2);
+}
+.services-section .container {
+  max-width: 100%;
+  padding-inline: var(--space-8);
+}
+.services-section .section-header,
+.services-section .services-cta-row {
+  max-width: var(--content-default);
+  margin-inline: auto;
 }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5);
+  gap: var(--space-6);
   margin-bottom: var(--space-10);
 }
 .service-card {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 32px rgba(80, 30, 70, 0.13);
   transition:
     box-shadow var(--transition),
     transform var(--transition);
   display: flex;
   flex-direction: column;
-  padding: var(--space-8) var(--space-9);
-  min-height: 300px;
+  padding: var(--space-10) var(--space-10);
+  min-height: 340px;
 }
 .service-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 48px rgba(80, 30, 70, 0.2);
   transform: translateY(-3px);
 }
 .service-card--wide {
@@ -782,7 +791,7 @@ header {
 .service-title {
   font-size: var(--text-lg);
   font-weight: 600;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 .service-desc {
   font-size: var(--text-sm);
@@ -791,8 +800,8 @@ header {
   flex-grow: 1;
 }
 .service-result {
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
   border-top: 1px solid var(--color-divider);
   font-size: var(--text-sm);
   color: var(--color-primary);
@@ -802,11 +811,19 @@ header {
   text-align: center;
 }
 @media (max-width: 768px) {
+  .services-section .container {
+    padding-inline: var(--space-4);
+  }
   .services-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
   .service-card--wide {
     grid-column: span 1;
+  }
+  .service-card {
+    padding: var(--space-7);
+    min-height: unset;
   }
 }
 

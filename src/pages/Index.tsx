@@ -110,12 +110,7 @@ export default function Index() {
               <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
               <a href="#services" className="btn-ghost">Смотреть услуги</a>
             </div>
-            <div className="hero-trust">
-              <div className="hero-trust-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <span>Более 200 довольных клиентов в Артёме</span>
-            </div>
+
           </div>
 
         </div>

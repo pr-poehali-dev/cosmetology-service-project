@@ -105,7 +105,7 @@ export default function Index() {
           <div className="hero-content reveal">
             <div className="hero-eyebrow">✦ Эстетическая косметология в Артёме</div>
             <h1 className="hero-title">Никто не догадается. <em>Все заметят.</em></h1>
-            <p className="hero-subtitle">Эстетическая косметология в Артёме. Результат виден уже после первой процедуры — без боли, без операций, без «заметного вмешательства».</p>
+            <p className="hero-subtitle">Один визит — и ты уже другая!</p>
             <div className="hero-actions">
               <a href="#form" className="btn-primary">Записаться</a>
               <a href="#services" className="btn-ghost">Смотреть услуги</a>

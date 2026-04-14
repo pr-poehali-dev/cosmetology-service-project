@@ -67,12 +67,16 @@ export default function Index() {
             <img src="https://cdn.poehali.dev/files/96710f67-2945-4d7a-8537-a866ce300658.png" alt="SO студия красоты" style={{width: 52, height: 52, objectFit: 'contain', flexShrink: 0}} />
             <span style={{fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.12em', color: 'var(--color-text-muted)', textTransform: 'uppercase'}}>Эстетическая косметология</span>
           </div>
-          <div className="header-actions">
-            <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-            <a href="#form" className="header-cta">Уточнить свободные даты →</a>
-          </div>
+          <nav className="header-nav">
+            <a href="#about" className="header-nav-link">Обо мне</a>
+            <a href="#services" className="header-nav-link">Услуги</a>
+            <a href="#programs" className="header-nav-link">Программы</a>
+            <a href="#reviews" className="header-nav-link">Отзывы</a>
+            <a href="#form" className="header-nav-link">Запись</a>
+          </nav>
+          <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
         </div>
       </header>
 

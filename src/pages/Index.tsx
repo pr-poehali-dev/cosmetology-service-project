@@ -293,8 +293,8 @@ export default function Index() {
             <div className="program-card reveal">
               <div className="program-badge">Уход</div>
               <div className="program-title">💅 Спа для рук</div>
-              <div className="program-composition">Пилинг + питательная маска + массаж рук + уход за кутикулой</div>
-              <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает уход за кутикулой, пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>
+              <div className="program-composition">Пилинг + питательная маска + массаж рук</div>
+              <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>
               <p className="program-fits"><strong>Подходит:</strong> для регулярного ухода, особенно в холодное время года.</p>
               <div className="program-effect">✨ Молодые, ухоженные руки после первого сеанса</div>
             </div>

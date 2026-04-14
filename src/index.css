@@ -5,24 +5,24 @@
 /* ===== DESIGN TOKENS ===== */
 :root,
 [data-theme="light"] {
-  --color-bg: #faf8f5;
-  --color-surface: #f5f2ee;
-  --color-surface-2: #f0ece7;
-  --color-surface-offset: #e8e4de;
-  --color-divider: #ddd9d2;
-  --color-border: #d4cfc8;
-  --color-text: #1e1b16;
-  --color-text-muted: #6e6a62;
-  --color-text-faint: #b2aea6;
-  --color-text-inverse: #faf8f5;
+  --color-bg: #fdf8fa;
+  --color-surface: #f9f0f4;
+  --color-surface-2: #f4e8ee;
+  --color-surface-offset: #eddde6;
+  --color-divider: #e2d0d9;
+  --color-border: #d8c5d0;
+  --color-text: #1e1520;
+  --color-text-muted: #7a6272;
+  --color-text-faint: #c0aab6;
+  --color-text-inverse: #fdf8fa;
 
-  --color-primary: #9c5a5a;
-  --color-primary-hover: #7d4444;
-  --color-primary-active: #5e3232;
-  --color-primary-highlight: #f0e2e2;
+  --color-primary: #9f72b0;
+  --color-primary-hover: #8558a0;
+  --color-primary-active: #6b3f88;
+  --color-primary-highlight: #f0e5f6;
 
-  --color-accent: #c49a8a;
-  --color-accent-light: #f5ede9;
+  --color-accent: #c9a84c;
+  --color-accent-light: #fdf5e0;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -30,9 +30,9 @@
   --radius-xl: 1.25rem;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(60, 35, 25, 0.07);
-  --shadow-md: 0 4px 16px rgba(60, 35, 25, 0.09);
-  --shadow-lg: 0 12px 40px rgba(60, 35, 25, 0.12);
+  --shadow-sm: 0 1px 3px rgba(80, 30, 70, 0.07);
+  --shadow-md: 0 4px 16px rgba(80, 30, 70, 0.09);
+  --shadow-lg: 0 12px 40px rgba(80, 30, 70, 0.12);
 
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
@@ -68,19 +68,19 @@
   --card-foreground: 0 0% 10%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 10%;
-  --primary: 0 27% 48%;
+  --primary: 285 28% 56%;
   --primary-foreground: 0 0% 98%;
-  --secondary: 20 20% 95%;
+  --secondary: 330 30% 95%;
   --secondary-foreground: 0 0% 10%;
-  --muted: 20 15% 95%;
-  --muted-foreground: 20 8% 43%;
-  --accent: 20 15% 95%;
+  --muted: 330 20% 95%;
+  --muted-foreground: 330 12% 48%;
+  --accent: 42 55% 55%;
   --accent-foreground: 0 0% 10%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --border: 20 20% 84%;
-  --input: 20 20% 84%;
-  --ring: 0 27% 48%;
+  --border: 330 25% 84%;
+  --input: 330 25% 84%;
+  --ring: 285 28% 56%;
   --radius: 0.875rem;
   --sidebar-background: 0 0% 98%;
   --sidebar-foreground: 240 5.3% 26.1%;
@@ -93,25 +93,25 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #18140f;
-  --color-surface: #1e1a14;
-  --color-surface-2: #221d17;
-  --color-surface-offset: #2a2419;
-  --color-divider: #312b21;
-  --color-border: #3a342a;
-  --color-text: #e8e4de;
-  --color-text-muted: #948f87;
-  --color-text-faint: #5e5950;
-  --color-text-inverse: #18140f;
-  --color-primary: #d48080;
-  --color-primary-hover: #e09090;
-  --color-primary-active: #eba0a0;
-  --color-primary-highlight: #3a2222;
-  --color-accent: #c49a8a;
-  --color-accent-light: #2e211c;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --color-bg: #150f18;
+  --color-surface: #1c1420;
+  --color-surface-2: #221825;
+  --color-surface-offset: #2a1f30;
+  --color-divider: #33253c;
+  --color-border: #3e2e4a;
+  --color-text: #ede0f2;
+  --color-text-muted: #9e88ac;
+  --color-text-faint: #5e4d6a;
+  --color-text-inverse: #150f18;
+  --color-primary: #c49ed4;
+  --color-primary-hover: #d4b0e4;
+  --color-primary-active: #e0c4f0;
+  --color-primary-highlight: #2e1e38;
+  --color-accent: #d4a84c;
+  --color-accent-light: #2a2010;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
 /* ===== BASE ===== */

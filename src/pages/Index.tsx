@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function Index() {
   const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
   const [agreed, setAgreed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Dark mode toggle
@@ -74,11 +75,29 @@ export default function Index() {
             <a href="#reviews" className="header-nav-link">Отзывы</a>
             <a href="#form" className="header-nav-link">Запись</a>
           </nav>
-          <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
+          <div style={{display: 'flex', alignItems: 'center', gap: 'var(--space-2)'}}>
+            <button className="theme-toggle" data-theme-toggle aria-label="Сменить тему">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button className="burger" aria-label="Меню" onClick={() => setMenuOpen(o => !o)}>
+              <span className={`burger-line${menuOpen ? ' open' : ''}`} />
+              <span className={`burger-line${menuOpen ? ' open' : ''}`} />
+              <span className={`burger-line${menuOpen ? ' open' : ''}`} />
+            </button>
+          </div>
         </div>
       </header>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
+          <a href="#about" className="mobile-menu-link">Обо мне</a>
+          <a href="#services" className="mobile-menu-link">Услуги</a>
+          <a href="#programs" className="mobile-menu-link">Программы</a>
+          <a href="#reviews" className="mobile-menu-link">Отзывы</a>
+          <a href="#form" className="mobile-menu-link">Запись</a>
+        </div>
+      )}
 
       {/* БЛОК 1: HERO */}
       <section className="hero" id="top">

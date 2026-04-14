@@ -186,7 +186,7 @@ export default function Index() {
             </div>
             <div className="about-text reveal">
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
-              <h2 className="about-title">Привет, я — Александра</h2>
+              <h2 className="about-title">Привет, я —<br/>Александра</h2>
               <div className="about-principle">
                 «Кожа должна выглядеть ухоженно, а не "сделано"»
               </div>

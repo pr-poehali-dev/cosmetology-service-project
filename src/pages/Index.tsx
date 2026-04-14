@@ -298,6 +298,14 @@ export default function Index() {
               <p className="program-fits"><strong>Подходит:</strong> для регулярного ухода, особенно в холодное время года.</p>
               <div className="program-effect">✨ Молодые, ухоженные руки после первого сеанса</div>
             </div>
+            <div className="program-card reveal">
+              <div className="program-badge">Мужское</div>
+              <div className="program-title">🧔 Мужской уход</div>
+              <div className="program-composition">Глубокая чистка + уход + тонизирование</div>
+              <p className="program-desc">Мужская кожа требует особого подхода: более плотная, склонная к жирности и раздражению после бритья. Глубокая чистка, уход и тонизирование — всё, что нужно, чтобы выглядеть свежо и уверенно.</p>
+              <p className="program-fits"><strong>Подходит:</strong> для мужчин с любым типом кожи.</p>
+              <div className="program-effect">✦ Чёткий овал — чёткий мужчина</div>
+            </div>
           </div>
           <div className="services-cta-row reveal">
             <a href="#form" className="btn-primary">Записаться</a>

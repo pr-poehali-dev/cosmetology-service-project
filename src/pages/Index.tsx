@@ -235,7 +235,7 @@ export default function Index() {
             <div className="service-card reveal">
               <div className="service-num">05</div>
               <div className="service-title">Массаж лица</div>
-              <p className="service-desc">Буккальный, скульптурный, лимфодренажный — выбираем технику под твою задачу. Подтягивает овал, снимает отёки, возвращает чёткие контуры без единого укола.</p>
+              <p className="service-desc">Классический массаж лица — это когда уходишь с другим лицом и полным ощущением, что отдохнула неделю. Тёплые руки, точные движения — мышцы расслабляются, лимфа разгоняется, кожа наполняется.</p>
               <div className="service-result">✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
             </div>
             <div className="service-card reveal">

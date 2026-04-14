@@ -208,19 +208,19 @@ export default function Index() {
             <p className="section-subtitle">7 проверенных методик — от деликатного ухода до аппаратного омоложения</p>
           </div>
           <div className="services-grid">
-            <div className="service-card reveal" style={{display:'flex', gap:'1.5rem', alignItems:'flex-start'}}>
-              <div style={{flex:1}}>
+            <div className="service-card reveal" style={{display:'flex', gap:'1.5rem', alignItems:'stretch'}}>
+              <div style={{flex:1, display:'flex', flexDirection:'column'}}>
                 <div className="service-num">01</div>
                 <div className="service-title">Чистка лица</div>
                 <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Чистая, свежая кожа уже в день процедуры</div>
               </div>
               <img
                 src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/fa2c1421-c2ee-4ec7-9a0c-42c588a8965c.png"
                 alt="Чистка лица"
-                style={{width:'180px', height:'220px', objectFit:'cover', borderRadius:'12px', flexShrink:0, alignSelf:'flex-start'}}
+                style={{width:'160px', objectFit:'cover', borderRadius:'8px', flexShrink:0}}
               />
             </div>
-            <div className="service-result reveal">✦ Чистая, свежая кожа уже в день процедуры</div>
             <div className="service-card reveal">
               <div className="service-num">02</div>
               <div className="service-title">Гидропилинг</div>

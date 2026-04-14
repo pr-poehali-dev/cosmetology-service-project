@@ -217,7 +217,7 @@ export default function Index() {
               <img
                 src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/3d252354-5031-4a6c-aea5-5c7a02c7c218.png"
                 alt="Чистка лица"
-                style={{position:'absolute', top:0, right:0, width:'42%', bottom:'calc(var(--space-5) * 2 + 1.2em + 1px)', objectFit:'cover', objectPosition:'center top'}}
+                style={{position:'absolute', top:'12px', right:'12px', width:'42%', bottom:'calc(var(--space-5) * 2 + 1.2em + 1px + 12px)', objectFit:'cover', objectPosition:'center top', borderRadius:'8px'}}
               />
               <div className="service-result">✦ Чистая, свежая кожа уже в день процедуры</div>
             </div>

@@ -5,10 +5,10 @@
 /* ===== DESIGN TOKENS ===== */
 :root,
 [data-theme="light"] {
-  --color-bg: #f5eaf0;
-  --color-surface: #ecdae4;
-  --color-surface-2: #e4cfd9;
-  --color-surface-offset: #d9c0ce;
+  --color-bg: #fdf8fa;
+  --color-surface: #f5eaf0;
+  --color-surface-2: #ecdae4;
+  --color-surface-offset: #e4cfd9;
   --color-divider: #e2d0d9;
   --color-border: #d8c5d0;
   --color-text: #1e1520;
@@ -192,9 +192,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in oklab, var(--color-primary) 90%, transparent);
+  background: #6b6b72ee;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-primary-active);
+  border-bottom: 1px solid #55555a;
   padding: var(--space-1) 0;
   transition: background var(--transition);
 }

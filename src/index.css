@@ -184,7 +184,7 @@ li {
   padding-inline: var(--space-6);
 }
 section {
-  padding-block: clamp(var(--space-8), 4vw, var(--space-14));
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
 }
 
 /* ===== HEADER ===== */

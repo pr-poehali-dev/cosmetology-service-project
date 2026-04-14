@@ -107,7 +107,7 @@ export default function Index() {
             <h1 className="hero-title">Никто не догадается. <em>Все заметят.</em></h1>
             <p className="hero-subtitle">Эстетическая косметология в Артёме. Результат виден уже после первой процедуры — без боли, без операций, без «заметного вмешательства».</p>
             <div className="hero-actions">
-              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+              <a href="#form" className="btn-primary">Записаться</a>
               <a href="#services" className="btn-ghost">Смотреть услуги</a>
             </div>
 
@@ -193,7 +193,7 @@ export default function Index() {
                 <li>Индивидуальный протокол для каждого клиента</li>
                 <li>Уютный кабинет — без очередей и спешки</li>
               </ul>
-              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+              <a href="#form" className="btn-primary">Записаться</a>
             </div>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function Index() {
             </div>
           </div>
           <div className="services-cta-row reveal">
-            <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+            <a href="#form" className="btn-primary">Записаться</a>
           </div>
         </div>
       </section>
@@ -300,7 +300,7 @@ export default function Index() {
             </div>
           </div>
           <div className="services-cta-row reveal">
-            <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+            <a href="#form" className="btn-primary">Записаться</a>
           </div>
         </div>
       </section>
@@ -350,7 +350,7 @@ export default function Index() {
                   </div>
                 </li>
               </ul>
-              <a href="#form" className="btn-primary reveal">Уточнить свободные даты →</a>
+              <a href="#form" className="btn-primary reveal">Записаться</a>
             </div>
             <div className="why-visual reveal">
               <div className="why-stat-card">
@@ -428,7 +428,7 @@ export default function Index() {
                 <li>Скидка 10% при записи онлайн</li>
                 <li>Индивидуальный план ухода в подарок</li>
               </ul>
-              <a href="#form" className="btn-primary">Уточнить свободные даты →</a>
+              <a href="#form" className="btn-primary">Записаться</a>
             </div>
             <div className="promo-gift reveal">
               <div className="promo-gift-emoji">🎁</div>

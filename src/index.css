@@ -411,7 +411,7 @@ header {
 }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-16);
   align-items: center;
   max-width: var(--content-default);
@@ -420,6 +420,7 @@ header {
   padding-block: var(--space-20);
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -434,6 +435,7 @@ header {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   margin-bottom: var(--space-5);
+  margin-inline: auto;
 }
 .hero-title {
   font-size: var(--text-hero);
@@ -453,16 +455,19 @@ header {
   line-height: 1.6;
   margin-bottom: var(--space-8);
   max-width: 50ch;
+  margin-inline: auto;
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
   align-items: center;
+  justify-content: center;
 }
 .hero-trust {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-3);
   margin-top: var(--space-8);
   color: var(--color-text-muted);

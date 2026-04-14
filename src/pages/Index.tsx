@@ -66,7 +66,7 @@ export default function Index() {
         <div className="header-inner">
           <div className="logo">
             <img src="https://cdn.poehali.dev/files/96710f67-2945-4d7a-8537-a866ce300658.png" alt="SO студия красоты" style={{width: 104, height: 104, objectFit: 'contain', flexShrink: 0}} />
-            <span style={{fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.12em', color: 'var(--color-text-muted)', textTransform: 'uppercase'}}>Эстетическая косметология</span>
+            <span style={{fontSize: 'var(--text-xs)', fontWeight: 400, letterSpacing: '0.12em', color: 'var(--color-text-inverse)', textTransform: 'uppercase', opacity: 0.85}}>Эстетическая косметология</span>
           </div>
           <nav className="header-nav">
             <a href="#about" className="header-nav-link">Обо мне</a>

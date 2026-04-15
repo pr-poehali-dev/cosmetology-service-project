@@ -262,11 +262,20 @@ export default function Index() {
               <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
               <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
             </div>
-            <div className="service-card reveal service-card--wide">
-              <div className="service-num">07</div>
-              <div className="service-title">РФ-лифтинг</div>
-              <p className="service-desc">Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается омоложение изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
-              <div className="service-result">✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
+            <div className="service-card reveal service-card--wide" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+              <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
+                <div className="service-num">07</div>
+                <div className="service-title">РФ-лифтинг</div>
+                <p className="service-desc">Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается омоложение изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
+              </div>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/0e086857-89be-41d5-893b-1599fbe50781.jpeg"
+                  alt="РФ-лифтинг"
+                  style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
+                />
+              </div>
             </div>
           </div>
           <div className="services-cta-row reveal">

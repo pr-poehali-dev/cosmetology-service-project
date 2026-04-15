@@ -262,7 +262,7 @@ export default function Index() {
               <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
               <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
             </div>
-            <div className="service-card reveal service-card--wide" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+            <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
               <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
                 <div className="service-num">07</div>
                 <div className="service-title">РФ-лифтинг</div>

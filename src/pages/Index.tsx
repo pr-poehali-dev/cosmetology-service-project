@@ -174,17 +174,13 @@ export default function Index() {
           <div style={{display:'flex', flexDirection:'row', gap:'var(--space-10)', alignItems:'center'}}>
 
             {/* Фото слева — квадрат с отступами */}
-            <div className="reveal" style={{flexShrink:0, width:'280px', padding:'var(--space-4)'}}>
+            <div className="reveal" style={{flexShrink:0, width:'380px', padding:'var(--space-4)'}}>
               <div style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'var(--shadow-lg)'}}>
                 <img
                   src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
                   alt="Александра — косметолог в Артёме"
                   style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}}
                 />
-                <div className="about-photo-badge">
-                  <div className="about-name">Александра</div>
-                  <div className="about-role">Косметолог · Артём</div>
-                </div>
               </div>
             </div>
 
@@ -192,7 +188,7 @@ export default function Index() {
             <div className="reveal" style={{flex:'1 1 0', minWidth:0}}>
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
               <h2 className="about-title" style={{fontSize:'var(--text-xl)', marginBottom:'var(--space-3)'}}>Привет, я — Александра</h2>
-              <div className="about-principle" style={{fontSize:'var(--text-sm)', marginBottom:'var(--space-4)'}}>
+              <div className="about-principle" style={{fontSize:'var(--text-lg)', marginBottom:'var(--space-4)'}}>
                 «Лучший аксессуар, который ты носишь каждый день — это твоя кожа. Пусть он будет безупречен»
               </div>
               <p style={{fontSize:'var(--text-sm)',color:'var(--color-text-muted)',marginBottom:'var(--space-4)',lineHeight:'1.6'}}>

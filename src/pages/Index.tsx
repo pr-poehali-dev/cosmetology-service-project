@@ -223,11 +223,20 @@ export default function Index() {
                 />
               </div>
             </div>
-            <div className="service-card reveal">
-              <div className="service-num">02</div>
-              <div className="service-title">Гидропилинг</div>
-              <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
-              <div className="service-result">✦ Сужение пор, выравнивание рельефа, сияние</div>
+            <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+              <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
+                <div className="service-num">02</div>
+                <div className="service-title">Гидропилинг</div>
+                <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Сужение пор, выравнивание рельефа, сияние</div>
+              </div>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/fe8a30db-1130-4620-a10e-4982f6ca880b.jpeg"
+                  alt="Гидропилинг"
+                  style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
+                />
+              </div>
             </div>
             <div className="service-card reveal">
               <div className="service-num">03</div>

@@ -241,11 +241,20 @@ export default function Index() {
               <p className="service-desc">Микроиглы запускают выработку коллагена и эластина. Лечебные сыворотки вводятся глубоко в дерму — туда, куда крем никогда не доберётся.</p>
               <div className="service-result">✦ Подтяжка, уменьшение морщин, устранение постакне</div>
             </div>
-            <div className="service-card reveal">
-              <div className="service-num">05</div>
-              <div className="service-title">Массаж лица</div>
-              <p className="service-desc">Классический массаж лица — это когда уходишь с другим лицом и полным ощущением, что отдохнула неделю. Тёплые руки, точные движения — мышцы расслабляются, лимфа разгоняется, кожа наполняется.</p>
-              <div className="service-result">✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
+            <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+              <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
+                <div className="service-num">05</div>
+                <div className="service-title">Массаж лица</div>
+                <p className="service-desc">Классический массаж лица — это когда уходишь с другим лицом и полным ощущением, что отдохнула неделю. Тёплые руки, точные движения — мышцы расслабляются, лимфа разгоняется, кожа наполняется.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
+              </div>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/9d5b1ed6-d036-4456-a947-f38e1ab23dde.jpeg"
+                  alt="Массаж лица"
+                  style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
+                />
+              </div>
             </div>
             <div className="service-card reveal">
               <div className="service-num">06</div>

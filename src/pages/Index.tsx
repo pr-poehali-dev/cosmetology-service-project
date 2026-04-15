@@ -169,32 +169,52 @@ export default function Index() {
       </section>
 
       {/* БЛОК 3: О МАСТЕРЕ */}
-      <section id="about">
+      <section id="about" style={{padding:'var(--space-12) 0'}}>
         <div className="container">
-          <div className="about-inner">
-            <div className="about-photo reveal">
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/6bffd02a-ba89-4168-9cb4-3098f8bbf26f.png" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}} />
-              <div className="about-photo-badge">
-                <div className="about-name">Александра</div>
-                <div className="about-role">Косметолог · Артём</div>
+          <div style={{display:'flex', flexDirection:'row', gap:'var(--space-10)', alignItems:'center'}}>
+
+            {/* Фото слева — квадрат с отступами */}
+            <div className="reveal" style={{flexShrink:0, width:'280px', padding:'var(--space-4)'}}>
+              <div style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'var(--shadow-lg)'}}>
+                <img
+                  src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
+                  alt="Александра — косметолог в Артёме"
+                  style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}}
+                />
+                <div className="about-photo-badge">
+                  <div className="about-name">Александра</div>
+                  <div className="about-role">Косметолог · Артём</div>
+                </div>
               </div>
             </div>
-            <div className="about-text reveal">
+
+            {/* Текст справа */}
+            <div className="reveal" style={{flex:'1 1 0', minWidth:0}}>
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
-              <h2 className="about-title">Привет, я —<br/>Александра</h2>
-              <div className="about-principle">
+              <h2 className="about-title" style={{fontSize:'var(--text-xl)', marginBottom:'var(--space-3)'}}>Привет, я — Александра</h2>
+              <div className="about-principle" style={{fontSize:'var(--text-sm)', marginBottom:'var(--space-4)'}}>
                 «Лучший аксессуар, который ты носишь каждый день — это твоя кожа. Пусть он будет безупречен»
               </div>
-              <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'var(--space-6)',lineHeight:'1.7'}}>
+              <p style={{fontSize:'var(--text-sm)',color:'var(--color-text-muted)',marginBottom:'var(--space-4)',lineHeight:'1.6'}}>
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
-              <ul className="about-list">
-                <li>Только сертифицированные аппараты и профессиональная косметика</li>
-                <li>Индивидуальный протокол для каждого клиента</li>
-                <li>Уютный кабинет — без очередей и спешки</li>
-              </ul>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'var(--space-2)', marginBottom:'var(--space-5)'}}>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
+                  <span>Только сертифицированные аппараты и профессиональная косметика</span>
+                </div>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
+                  <span>Индивидуальный протокол для каждого клиента</span>
+                </div>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
+                  <span>Уютный кабинет — без очередей и спешки</span>
+                </div>
+              </div>
               <a href="#form" className="btn-primary">Записаться</a>
             </div>
+
           </div>
         </div>
       </section>

@@ -169,31 +169,45 @@ export default function Index() {
       </section>
 
       {/* БЛОК 3: О МАСТЕРЕ */}
-      <section id="about">
+      <section id="about" style={{padding:'var(--space-16) 0'}}>
         <div className="container">
-          <div className="about-inner">
-            <div className="about-photo reveal">
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/6bffd02a-ba89-4168-9cb4-3098f8bbf26f.png" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}} />
+          <div style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'40px'}}>
+            {/* Фото слева */}
+            <div className="reveal" style={{flex:'0 0 300px', maxWidth:'300px', borderRadius:'16px', overflow:'hidden', position:'relative', minHeight:'360px'}}>
+              <img src="https://cdn.poehali.dev/files/83dbd559-d725-4603-b42c-dc2482f82010.jpeg" alt="Александра — косметолог в Артёме" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}} />
               <div className="about-photo-badge">
                 <div className="about-name">Александра</div>
                 <div className="about-role">Косметолог · Артём</div>
               </div>
             </div>
-            <div className="about-text reveal">
+            {/* Текст справа */}
+            <div className="reveal" style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column', justifyContent:'center'}}>
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
-              <h2 className="about-title">Привет, я —<br/>Александра</h2>
-              <div className="about-principle">
-                «Лучший аксессуар, который ты носишь каждый день — это твоя кожа. Пусть он будет безупречен»
-              </div>
-              <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'var(--space-6)',lineHeight:'1.7'}}>
+              <h2 className="about-title" style={{marginBottom:'12px'}}>Привет, я —<br/>Александра</h2>
+              <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'16px',lineHeight:'1.7'}}>
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
-              <ul className="about-list">
-                <li>Только сертифицированные аппараты и профессиональная косметика</li>
-                <li>Индивидуальный протокол для каждого клиента</li>
-                <li>Уютный кабинет — без очередей и спешки</li>
-              </ul>
-              <a href="#form" className="btn-primary">Записаться</a>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', marginBottom:'20px'}}>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
+                  <span>Только сертифицированные аппараты и профессиональная косметика</span>
+                </div>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
+                  <span>Индивидуальный протокол для каждого клиента</span>
+                </div>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
+                  <span>Уютный кабинет — без очередей и спешки</span>
+                </div>
+                <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                  <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
+                  <span>«Лучший аксессуар — это твоя кожа. Пусть он будет безупречен»</span>
+                </div>
+              </div>
+              <div>
+                <a href="#form" className="btn-primary">Записаться</a>
+              </div>
             </div>
           </div>
         </div>

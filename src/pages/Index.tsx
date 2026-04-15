@@ -265,11 +265,20 @@ export default function Index() {
                 />
               </div>
             </div>
-            <div className="service-card reveal">
-              <div className="service-num">06</div>
-              <div className="service-title">Микротоки</div>
-              <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
-              <div className="service-result">✦ Подтянутые контуры, здоровый цвет лица</div>
+            <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+              <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
+                <div className="service-num">06</div>
+                <div className="service-title">Микротоки</div>
+                <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Подтянутые контуры, здоровый цвет лица</div>
+              </div>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/240f6709-3359-4296-9eba-7879a9a1e119.jpeg"
+                  alt="Микротоки"
+                  style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
+                />
+              </div>
             </div>
             <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
               <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>

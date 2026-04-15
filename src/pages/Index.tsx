@@ -238,11 +238,20 @@ export default function Index() {
                 />
               </div>
             </div>
-            <div className="service-card reveal">
-              <div className="service-num">03</div>
-              <div className="service-title">Пилинги</div>
-              <p className="service-desc">Химические пилинги на кислотах — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
-              <div className="service-result">✦ Обновлённая, ровная кожа с видимым сиянием</div>
+            <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
+              <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>
+                <div className="service-num">03</div>
+                <div className="service-title">Пилинги</div>
+                <p className="service-desc">Химические пилинги на кислотах — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
+                <div className="service-result" style={{marginTop:'auto'}}>✦ Обновлённая, ровная кожа с видимым сиянием</div>
+              </div>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+                <img
+                  src="https://cdn.poehali.dev/files/b67ea631-8679-4d90-8f00-1f6225c4e346.jpeg"
+                  alt="Пилинги"
+                  style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
+                />
+              </div>
             </div>
             <div className="service-card reveal" style={{display:'flex', flexDirection:'row', alignItems:'stretch', gap:'16px', overflow:'hidden'}}>
               <div style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column'}}>

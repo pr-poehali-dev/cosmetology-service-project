@@ -181,6 +181,7 @@ export default function Index() {
                   alt="Александра — косметолог в Артёме"
                   style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}}
                 />
+                <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.28) 100%)',borderRadius:'inherit'}} />
               </div>
             </div>
 
@@ -194,19 +195,20 @@ export default function Index() {
               <p style={{fontSize:'var(--text-sm)',color:'var(--color-text-muted)',marginBottom:'var(--space-4)',lineHeight:'1.6'}}>
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
-              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'var(--space-2)', marginBottom:'var(--space-5)'}}>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'var(--space-3)', marginBottom:'var(--space-5)', alignItems:'start'}}>
                 <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
                   <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
                   <span>Только сертифицированные аппараты и профессиональная косметика</span>
                 </div>
-                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
-                  <span>Индивидуальный протокол для каждого клиента</span>
-                </div>
-                <div></div>
-                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
-                  <span>Уютный кабинет — без очередей и спешки</span>
+                <div style={{display:'flex', flexDirection:'column', gap:'var(--space-3)'}}>
+                  <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                    <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
+                    <span>Индивидуальный протокол для каждого клиента</span>
+                  </div>
+                  <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
+                    <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
+                    <span>Уютный кабинет — без очередей и спешки</span>
+                  </div>
                 </div>
               </div>
               <a href="#form" className="btn-primary">Записаться</a>

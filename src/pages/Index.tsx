@@ -174,7 +174,7 @@ export default function Index() {
           <div style={{display:'flex', flexDirection:'row', gap:'var(--space-10)', alignItems:'center'}}>
 
             {/* Фото слева — квадрат с отступами */}
-            <div className="reveal" style={{flexShrink:0, width:'380px', padding:'var(--space-4)'}}>
+            <div className="reveal" style={{flexShrink:0, width:'460px', padding:'var(--space-4)', marginLeft:'-var(--space-4)'}}>
               <div style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'var(--shadow-lg)'}}>
                 <img
                   src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
@@ -203,6 +203,7 @@ export default function Index() {
                   <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
                   <span>Индивидуальный протокол для каждого клиента</span>
                 </div>
+                <div></div>
                 <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
                   <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
                   <span>Уютный кабинет — без очередей и спешки</span>

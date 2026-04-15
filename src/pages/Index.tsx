@@ -184,6 +184,9 @@ export default function Index() {
             <div className="reveal" style={{flex:'1 1 0', minWidth:0, display:'flex', flexDirection:'column', justifyContent:'center'}}>
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
               <h2 className="about-title" style={{marginBottom:'12px'}}>Привет, я —<br/>Александра</h2>
+              <div className="about-principle" style={{marginBottom:'16px'}}>
+                «Лучший аксессуар, который ты носишь каждый день — это твоя кожа. Пусть он будет безупречен»
+              </div>
               <p style={{fontSize:'var(--text-base)',color:'var(--color-text-muted)',marginBottom:'16px',lineHeight:'1.7'}}>
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
@@ -199,10 +202,6 @@ export default function Index() {
                 <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
                   <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
                   <span>Уютный кабинет — без очередей и спешки</span>
-                </div>
-                <div style={{display:'flex', alignItems:'flex-start', gap:'8px', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                  <span style={{color:'var(--color-primary)', fontWeight:'bold', flexShrink:0}}>✦</span>
-                  <span>«Лучший аксессуар — это твоя кожа. Пусть он будет безупречен»</span>
                 </div>
               </div>
               <div>

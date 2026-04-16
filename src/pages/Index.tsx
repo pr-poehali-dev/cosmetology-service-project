@@ -99,6 +99,30 @@ export default function Index() {
         </div>
       )}
 
+      {/* БЛОК 0: АНИМИРОВАННЫЙ ГРАДИЕНТ (HTML/JS вставка) */}
+      <style>{`
+        section:first-of-type {
+          background: linear-gradient(
+            -45deg,
+            #f0e8ff,
+            #fdf0f5,
+            #efe8f8,
+            #faf5ff,
+            #f5e8f0
+          ) !important;
+          background-size: 400% 400% !important;
+          animation: gradientShift 15s ease infinite !important;
+        }
+
+        @keyframes gradientShift {
+          0%   { background-position: 0% 50%; }
+          25%  { background-position: 50% 0%; }
+          50%  { background-position: 100% 50%; }
+          75%  { background-position: 50% 100%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
+
       {/* БЛОК 1: HERO */}
       <section className="hero" id="top">
         <video

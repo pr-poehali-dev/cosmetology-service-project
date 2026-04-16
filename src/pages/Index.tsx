@@ -28,11 +28,11 @@ export default function Index() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     reveals.forEach(el => observer.observe(el));
 
     // Service card last span fix for mobile

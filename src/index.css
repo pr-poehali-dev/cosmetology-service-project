@@ -394,6 +394,34 @@ header {
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+    -45deg,
+    #f0e8ff,
+    #fdf0f5,
+    #efe8f8,
+    #faf5ff,
+    #f5e8f0
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .hero-video {
   position: absolute;

@@ -1385,6 +1385,20 @@ footer {
   transform: translateY(0);
 }
 
+/* ===== IMAGE REVEAL (шторка снизу вверх, медленнее блоков) ===== */
+.reveal-img {
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(24px);
+  transition:
+    clip-path 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path, transform;
+}
+.reveal-img.visible {
+  clip-path: inset(0% 0 0 0);
+  transform: translateY(0);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-inner {

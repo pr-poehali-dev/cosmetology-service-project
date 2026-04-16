@@ -35,6 +35,18 @@ export default function Index() {
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     reveals.forEach(el => observer.observe(el));
 
+    // Image reveal (slower, bottom-to-top clip)
+    const imgReveals = document.querySelectorAll('.reveal-img');
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          imgObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    imgReveals.forEach(el => imgObserver.observe(el));
+
     // Service card last span fix for mobile
     const lastCard = document.querySelector('.service-card[data-wide]') as HTMLElement | null;
     function fixLastCard() {
@@ -179,6 +191,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
                   alt="Александра — косметолог в Артёме"
+                  className="reveal-img"
                   style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}}
                 />
               </div>
@@ -237,6 +250,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/3d252354-5031-4a6c-aea5-5c7a02c7c218.png"
                   alt="Чистка лица"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -252,6 +266,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/fe8a30db-1130-4620-a10e-4982f6ca880b.jpeg"
                   alt="Гидропилинг"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -267,6 +282,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/files/b67ea631-8679-4d90-8f00-1f6225c4e346.jpeg"
                   alt="Пилинги"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -282,6 +298,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/files/7a761715-1f5b-4128-b830-3d3ea78a7164.jpeg"
                   alt="Микронидлинг"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -297,6 +314,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/9d5b1ed6-d036-4456-a947-f38e1ab23dde.jpeg"
                   alt="Массаж лица"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -312,6 +330,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/240f6709-3359-4296-9eba-7879a9a1e119.jpeg"
                   alt="Микротоки"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>
@@ -327,6 +346,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/0e086857-89be-41d5-893b-1599fbe50781.jpeg"
                   alt="РФ-лифтинг"
+                  className="reveal-img"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
                 />
               </div>

@@ -125,15 +125,6 @@ export default function Index() {
 
       {/* БЛОК 1: HERO */}
       <section className="hero" id="top">
-        <video
-          className="hero-video"
-          src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/20688edd-4653-48ab-ab87-f5a0765fa651.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div className="hero-video-overlay" />
         <div className="hero-inner">
           <div className="hero-content reveal">
             <div className="hero-eyebrow">✦ Эстетическая косметология в Артёме</div>

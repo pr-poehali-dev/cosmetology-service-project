@@ -394,34 +394,7 @@ header {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    -45deg,
-    #f0e8ff,
-    #fdf0f5,
-    #efe8f8,
-    #faf5ff,
-    #f5e8f0
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  background: #0d0a10;
 }
 .hero-video {
   position: absolute;
@@ -463,8 +436,8 @@ header {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-primary);
-  background: var(--color-primary-highlight);
+  color: #f0d6ff;
+  background: rgba(255, 255, 255, 0.12);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   margin-bottom: var(--space-5);
@@ -476,15 +449,15 @@ header {
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: var(--space-6);
-  color: var(--color-text);
+  color: #ffffff;
 }
 .hero-title em {
   font-style: italic;
-  color: var(--color-primary);
+  color: #e8b8ff;
 }
 .hero-subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
   margin-bottom: var(--space-8);
   max-width: 50ch;

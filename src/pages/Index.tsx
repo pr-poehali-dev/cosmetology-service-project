@@ -45,7 +45,11 @@ export default function Index() {
         }
       });
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    imgReveals.forEach(el => imgObserver.observe(el));
+    // Сначала подписываем на observer, потом скрываем — чтобы не было «исчезновения»
+    imgReveals.forEach(el => {
+      imgObserver.observe(el);
+      requestAnimationFrame(() => el.classList.add('ready'));
+    });
 
     // Service card last span fix for mobile
     const lastCard = document.querySelector('.service-card[data-wide]') as HTMLElement | null;

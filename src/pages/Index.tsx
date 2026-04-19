@@ -40,15 +40,15 @@ export default function Index() {
     const imgObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
+          e.target.classList.remove('hidden');
           e.target.classList.add('visible');
           imgObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    // Сначала подписываем на observer, потом скрываем — чтобы не было «исчезновения»
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     imgReveals.forEach(el => {
+      el.classList.add('hidden');
       imgObserver.observe(el);
-      requestAnimationFrame(() => el.classList.add('ready'));
     });
 
     // Service card last span fix for mobile

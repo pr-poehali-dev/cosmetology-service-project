@@ -1389,18 +1389,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Картинки: раскрытие снизу вверх */
-.reveal-img.hidden {
-  clip-path: inset(100% 0 0 0);
-}
-.reveal-img {
-  transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: clip-path;
-}
-.reveal-img.visible {
-  clip-path: inset(0% 0 0 0);
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-inner {

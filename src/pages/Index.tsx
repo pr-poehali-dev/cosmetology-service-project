@@ -35,21 +35,7 @@ export default function Index() {
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Image reveal (снизу вверх, медленнее блоков)
-    const imgReveals = document.querySelectorAll('.reveal-img');
-    const imgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.remove('hidden');
-          e.target.classList.add('visible');
-          imgObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
-    imgReveals.forEach(el => {
-      el.classList.add('hidden');
-      imgObserver.observe(el);
-    });
+
 
     // Service card last span fix for mobile
     const lastCard = document.querySelector('.service-card[data-wide]') as HTMLElement | null;
@@ -200,7 +186,7 @@ export default function Index() {
 
             {/* Фото слева — квадрат с отступами */}
             <div className="reveal" style={{flexShrink:0, width:'460px', padding:'var(--space-4)', marginLeft:'-var(--space-4)'}}>
-              <div className="reveal-img" style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'0 20px 60px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.15)'}}>
+              <div style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'0 20px 60px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.15)'}}>
                 <img
                   src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
                   alt="Александра — косметолог в Артёме"
@@ -258,7 +244,7 @@ export default function Index() {
                 <p className="service-desc">Глубокое очищение пор, удаление комедонов и загрязнений. Кожа буквально дышит после процедуры. Подходит для всех типов кожи, включая чувствительную.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Чистая, свежая кожа уже в день процедуры</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/3d252354-5031-4a6c-aea5-5c7a02c7c218.png"
                   alt="Чистка лица"
@@ -273,7 +259,7 @@ export default function Index() {
                 <p className="service-desc">Инновационная аппаратная процедура: вакуум мягко очищает поры, насыщая кожу питательными сыворотками. Никакого дискомфорта — только ощущение обновлённой кожи.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Сужение пор, выравнивание рельефа, сияние</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/fe8a30db-1130-4620-a10e-4982f6ca880b.jpeg"
                   alt="Гидропилинг"
@@ -288,7 +274,7 @@ export default function Index() {
                 <p className="service-desc">Химические пилинги на кислотах — подбираем тип и концентрацию индивидуально. Устраняют пигментацию, постакне, выравнивают тон.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Обновлённая, ровная кожа с видимым сиянием</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/files/b67ea631-8679-4d90-8f00-1f6225c4e346.jpeg"
                   alt="Пилинги"
@@ -303,7 +289,7 @@ export default function Index() {
                 <p className="service-desc">Микроиглы запускают выработку коллагена и эластина. Лечебные сыворотки вводятся глубоко в дерму — туда, куда крем никогда не доберётся.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Подтяжка, уменьшение морщин, устранение постакне</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/files/7a761715-1f5b-4128-b830-3d3ea78a7164.jpeg"
                   alt="Микронидлинг"
@@ -318,7 +304,7 @@ export default function Index() {
                 <p className="service-desc">Классический массаж лица — это когда уходишь с другим лицом и полным ощущением, что отдохнула неделю. Тёплые руки, точные движения — мышцы расслабляются, лимфа разгоняется, кожа наполняется.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Лифтинг, свежесть, естественная красота — видно сразу</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/9d5b1ed6-d036-4456-a947-f38e1ab23dde.jpeg"
                   alt="Массаж лица"
@@ -333,7 +319,7 @@ export default function Index() {
                 <p className="service-desc">Слабые электрические импульсы тонизируют мышцы лица, запускают лимфодренаж и синтез коллагена. «Фитнес для лица» — результат накапливается и держится.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Подтянутые контуры, здоровый цвет лица</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/240f6709-3359-4296-9eba-7879a9a1e119.jpeg"
                   alt="Микротоки"
@@ -348,7 +334,7 @@ export default function Index() {
                 <p className="service-desc">Радиочастотное тепловое воздействие нагревает глубокие слои кожи — коллаген сокращается, запускается омоложение изнутри. Безоперационная подтяжка лица, шеи и декольте.</p>
                 <div className="service-result" style={{marginTop:'auto'}}>✦ Подтянутый овал, устранение брылей и второго подбородка — без уколов</div>
               </div>
-              <div className="reveal-img" style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
+              <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/0e086857-89be-41d5-893b-1599fbe50781.jpeg"
                   alt="РФ-лифтинг"

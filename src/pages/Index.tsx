@@ -535,12 +535,31 @@ export default function Index() {
               </ul>
               <a href="#form" className="btn-primary">Записаться</a>
             </div>
-            <div className="promo-gift reveal">
-              <div className="promo-gift-emoji">🎁</div>
-              <div className="promo-gift-title">Бесплатная консультация</div>
-              <p className="promo-gift-text">Узнай, какие процедуры подойдут именно твоей коже — без обязательств и давления</p>
-              <a href="#form" className="btn-primary" style={{width:'100%',justifyContent:'center'}}>Записаться →</a>
-              <p className="promo-timer">⏳ Количество мест ограничено — свободные окошки разбирают быстро</p>
+            <div className="promo-gift reveal" style={{background:'none',boxShadow:'none',padding:'0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+              <div style={{position:'relative',display:'inline-block'}}>
+                <div style={{
+                  position:'absolute',
+                  inset:0,
+                  borderRadius:'20px',
+                  background:'linear-gradient(135deg, rgba(200,160,180,0.45) 0%, rgba(180,130,160,0.25) 100%)',
+                  transform:'translate(12px, 14px)',
+                  filter:'blur(18px)',
+                  zIndex:0
+                }}/>
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/72a51cf0-b89a-4764-add3-8bce493ee610.jpeg"
+                  alt="Косметолог"
+                  style={{
+                    position:'relative',
+                    zIndex:1,
+                    width:'100%',
+                    maxWidth:'380px',
+                    borderRadius:'20px',
+                    display:'block',
+                    boxShadow:'0 8px 40px rgba(160,100,140,0.22), 0 2px 12px rgba(0,0,0,0.10)'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -644,9 +644,24 @@ export default function Index() {
           <div>
             <div className="footer-heading">Контакты</div>
             <ul className="footer-contact-list">
-              <li>📍 <a href="https://2gis.ru/artem/geo/3519072864057850?m=132.176508%2C43.352743%2F16" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>г. Артём, ул. Фрунзе, 60</a></li>
-              <li>📞 <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a></li>
-              <li>✈️ <a href="https://t.me/" target="_blank" style={{color:'var(--color-primary)'}}>Telegram-канал</a></li>
+              <li style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'var(--color-primary)',flexShrink:0}}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </span>
+                <a href="https://2gis.ru/artem/geo/3519072864057850?m=132.176508%2C43.352743%2F16" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>г. Артём, ул. Фрунзе, 60</a>
+              </li>
+              <li style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'var(--color-primary)',flexShrink:0}}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </span>
+                <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a>
+              </li>
+              <li style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'#29A8E8',flexShrink:0}}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </span>
+                <a href="https://t.me/" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>Telegram-канал</a>
+              </li>
             </ul>
           </div>
           <div>
@@ -662,7 +677,7 @@ export default function Index() {
         </div>
         <div className="footer-bottom">
           <p className="footer-legal">© 2026 Александра · Эстетическая косметология · Артём</p>
-          <p className="footer-legal">ИНН / ОГРНИП: [укажите]</p>
+
         </div>
         <div className="footer-warn">
           ⚠️ Имеются противопоказания. Требуется консультация специалиста. Процедуры выполняются после личной консультации и оценки состояния кожи.

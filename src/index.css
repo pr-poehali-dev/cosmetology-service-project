@@ -878,6 +878,22 @@ header {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
+.program-icon-3d {
+  width: 72px;
+  height: 72px;
+  margin-bottom: var(--space-4);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.3s ease;
+  transform-origin: center bottom;
+}
+.program-card:hover .program-icon-3d {
+  transform: translateY(-6px) scale(1.08) rotate(-3deg);
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
 .program-badge {
   display: inline-block;
   font-size: var(--text-xs);

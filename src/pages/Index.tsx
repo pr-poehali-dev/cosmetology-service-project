@@ -360,7 +360,8 @@ export default function Index() {
           <div className="programs-grid">
             <div className="program-card reveal">
               <div className="program-badge">Хит</div>
-              <div className="program-title">🌿 Релакс</div>
+              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f33f.svg" alt="" className="program-icon-3d" />
+              <div className="program-title">Релакс</div>
               <div className="program-composition">Ультразвуковая чистка + пилинг + массаж лица + маска</div>
               <p className="program-desc">Идеальная программа для тех, кто давно не баловал себя уходом или просто хочет «перезагрузиться». Полный цикл за один визит: очищение, обновление, расслабление, питание.</p>
               <p className="program-fits"><strong>Подходит:</strong> всем типам кожи, особенно уставшей и тусклой.</p>
@@ -368,7 +369,8 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Сияние</div>
-              <div className="program-title">🤍 Фарфоровая куколка</div>
+              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f90d.svg" alt="" className="program-icon-3d" />
+              <div className="program-title">Фарфоровая куколка</div>
               <div className="program-composition">Ультразвуковая чистка + фонофорез с детокс-капсулами</div>
               <p className="program-desc">Аппаратная программа для глубокого детокса и сияния. Ультразвук открывает каналы в коже, фонофорез доставляет детокс-капсулы точно в дерму. Кожа становится светлой, ровной и буквально светится изнутри.</p>
               <p className="program-fits"><strong>Подходит:</strong> тусклая, пористая кожа, усталость после стресса.</p>
@@ -376,7 +378,8 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Интенсив</div>
-              <div className="program-title">💧 Глубокое увлажнение</div>
+              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4a7.svg" alt="" className="program-icon-3d" />
+              <div className="program-title">Глубокое увлажнение</div>
               <div className="program-composition">Ультразвуковая чистка + пилинг + микронидлинг</div>
               <p className="program-desc">Трёхступенчатая программа интенсивного обновления. Сначала очищаем и подготавливаем кожу, затем дермапен доставляет сыворотку с гиалуроновой кислотой в глубокие слои. Эффект держится неделями.</p>
               <p className="program-fits"><strong>Подходит:</strong> сухая, обезвоженная кожа, первые признаки старения.</p>
@@ -384,7 +387,8 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Уход</div>
-              <div className="program-title">💅 Спа для рук</div>
+              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f485.svg" alt="" className="program-icon-3d" />
+              <div className="program-title">Спа для рук</div>
               <div className="program-composition">Пилинг + питательная маска + массаж рук</div>
               <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>
               <p className="program-fits"><strong>Подходит:</strong> для регулярного ухода, особенно в холодное время года.</p>
@@ -392,7 +396,8 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Мужское</div>
-              <div className="program-title">🧔 Мужской уход</div>
+              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f9d4.svg" alt="" className="program-icon-3d" />
+              <div className="program-title">Мужской уход</div>
               <div className="program-composition">Глубокая чистка + уход + тонизирование</div>
               <p className="program-desc">Мужская кожа требует особого подхода: более плотная, склонная к жирности и раздражению после бритья. Глубокая чистка, уход и тонизирование — всё, что нужно, чтобы выглядеть свежо и уверенно.</p>
               <p className="program-fits"><strong>Подходит:</strong> для мужчин с любым типом кожи.</p>

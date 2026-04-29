@@ -136,8 +136,10 @@ export default function Index() {
           </div>
           <div className="pain-grid">
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', width:'68px', height:'68px'}}>
-                <img src="https://cdn.poehali.dev/files/2269012d-a3af-4b14-9d1d-2d9a47422935.png" alt="" style={{width:'68px',height:'68px',objectFit:'contain'}} />
+              <div className="pain-icon" style={{background:'transparent', width:'56px', height:'56px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'56px',height:'56px',borderRadius:'50%',background:'var(--color-primary)'}}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 3C9.24 3 7 5.24 7 8c0 1.85 1 3.47 2.5 4.33V13h5v-.67C16 11.47 17 9.85 17 8c0-2.76-2.24-5-5-5zm-1.5 5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zM9.5 14v1c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-1h-5zM7 19h10v2H7z"/></svg>
+                </span>
               </div>
               <div className="pain-card-text">
                 <h3>Поры расширены, кожа тусклая</h3>
@@ -145,8 +147,10 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', width:'68px', height:'68px'}}>
-                <img src="https://cdn.poehali.dev/files/58a6291e-d1b9-419f-aa1e-67226478a1e7.png" alt="" style={{width:'68px',height:'68px',objectFit:'contain'}} />
+              <div className="pain-icon" style={{background:'transparent', width:'56px', height:'56px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'56px',height:'56px',borderRadius:'50%',background:'var(--color-primary)'}}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h1l1 3h8l1-3h1c1.1 0 2-.9 2-2v-5c0-1.1-.9-2-2-2zm-8-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-5H6v-5h12v5z"/></svg>
+                </span>
               </div>
               <div className="pain-card-text">
                 <h3>Овал «поплыл», появился второй подбородок</h3>
@@ -154,8 +158,10 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', width:'68px', height:'68px'}}>
-                <img src="https://cdn.poehali.dev/files/b53bc0e3-f5eb-4ca0-9ccf-61e493ba8b1b.png" alt="" style={{width:'68px',height:'68px',objectFit:'contain'}} />
+              <div className="pain-icon" style={{background:'transparent', width:'56px', height:'56px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'56px',height:'56px',borderRadius:'50%',background:'var(--color-primary)'}}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                </span>
               </div>
               <div className="pain-card-text">
                 <h3>Боишься инъекций, но хочешь выглядеть свежо</h3>
@@ -163,8 +169,10 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', width:'68px', height:'68px'}}>
-                <img src="https://cdn.poehali.dev/files/6a6ea642-757c-4970-ae6f-5e62b5e149b5.png" alt="" style={{width:'68px',height:'68px',objectFit:'contain'}} />
+              <div className="pain-icon" style={{background:'transparent', width:'56px', height:'56px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'56px',height:'56px',borderRadius:'50%',background:'var(--color-primary)'}}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M21 6.5c0-1.93-1.57-3.5-3.5-3.5S14 4.57 14 6.5v.73C12.81 7.92 12 9.12 12 10.5V20h8V10.5c0-1.38-.81-2.58-2-3.27V6.5zm-3.5-1.5c.83 0 1.5.67 1.5 1.5v.28c-.48-.17-.99-.28-1.5-.28s-1.02.11-1.5.28V6.5c0-.83.67-1.5 1.5-1.5zM10 4H4c-1.1 0-2 .9-2 2v14h2v-5h4v5h2V6c0-1.1-.9-2-2-2zm-2 9H6v-2h2v2zm0-4H6V7h2v2zm4 4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+                </span>
               </div>
               <div className="pain-card-text">
                 <h3>Руки выдают возраст</h3>

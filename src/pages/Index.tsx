@@ -644,7 +644,7 @@ export default function Index() {
           <div>
             <div className="footer-heading">Контакты</div>
             <ul className="footer-contact-list">
-              <li>📍 г. Артём, ул. Фрунзе, 60</li>
+              <li>📍 <a href="https://2gis.ru/artem/geo/3519072864057850?m=132.176508%2C43.352743%2F16" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>г. Артём, ул. Фрунзе, 60</a></li>
               <li>📞 <a href="tel:+79084602924" style={{color:'var(--color-primary)'}}>+7-908-460-29-24</a></li>
               <li>✈️ <a href="https://t.me/" target="_blank" style={{color:'var(--color-primary)'}}>Telegram-канал</a></li>
             </ul>

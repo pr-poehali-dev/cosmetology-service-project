@@ -137,7 +137,11 @@ export default function Index() {
           <div className="pain-grid">
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f338.svg" alt="" className="program-icon-3d" style={{width:'64px',height:'64px'}} />
+                <svg className="program-icon-3d" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="32" fill="#9f72b0"/>
+                  <path d="M32 18c-3.87 0-7 3.13-7 7 0 2.61 1.43 4.88 3.54 6.12L27 44h10l-1.54-12.88C37.57 29.88 39 27.61 39 25c0-3.87-3.13-7-7-7zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z" fill="white"/>
+                  <ellipse cx="32" cy="44" rx="5" ry="2" fill="rgba(255,255,255,0.3)"/>
+                </svg>
               </div>
               <div className="pain-card-text">
                 <h3>Поры расширены, кожа тусклая</h3>
@@ -146,7 +150,13 @@ export default function Index() {
             </div>
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1fa9e.svg" alt="" className="program-icon-3d" style={{width:'64px',height:'64px'}} />
+                <svg className="program-icon-3d" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="32" fill="#9f72b0"/>
+                  <rect x="18" y="16" width="28" height="32" rx="3" fill="rgba(255,255,255,0.25)" stroke="white" strokeWidth="2"/>
+                  <ellipse cx="32" cy="28" rx="7" ry="8" fill="white" opacity="0.9"/>
+                  <path d="M25 36c0-3.87 3.13-5 7-5s7 1.13 7 5" fill="white" opacity="0.6"/>
+                  <path d="M24 20l16 0" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
               </div>
               <div className="pain-card-text">
                 <h3>Овал «поплыл», появился второй подбородок</h3>
@@ -154,9 +164,13 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', flexShrink:0, position:'relative', width:'64px', height:'64px'}}>
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f489.svg" alt="" className="program-icon-3d" style={{width:'64px',height:'64px'}} />
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f6ab.svg" alt="" style={{width:'36px',height:'36px',position:'absolute',bottom:'-4px',right:'-4px',filter:'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'}} />
+              <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
+                <svg className="program-icon-3d" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="32" fill="#9f72b0"/>
+                  <path d="M44 22l-2-2-3 3-2-2-8 8 2 2-6 6-2 6 6-2 6-6 2 2 8-8-2-2 3-3z" fill="white" opacity="0.9"/>
+                  <circle cx="22" cy="42" r="3" fill="rgba(255,255,255,0.4)"/>
+                  <path d="M40 20l4 4" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
               </div>
               <div className="pain-card-text">
                 <h3>Боишься инъекций, но хочешь выглядеть свежо</h3>
@@ -165,7 +179,10 @@ export default function Index() {
             </div>
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f91a.svg" alt="" className="program-icon-3d" style={{width:'64px',height:'64px'}} />
+                <svg className="program-icon-3d" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="32" fill="#9f72b0"/>
+                  <path d="M38 18v10h-2v-8h-2v8h-2v-8h-2v8h-2V18c0-1.1-.9-2-2-2s-2 .9-2 2v16l-3-3c-.78-.78-2.05-.78-2.83 0-.78.78-.78 2.05 0 2.83l7.83 7.83C24.56 43.22 27.14 44 30 44h4c4.42 0 8-3.58 8-8V18c0-1.1-.9-2-2-2s-2 .9-2 2z" fill="white" opacity="0.9"/>
+                </svg>
               </div>
               <div className="pain-card-text">
                 <h3>Руки выдают возраст</h3>

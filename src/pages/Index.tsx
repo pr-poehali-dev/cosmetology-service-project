@@ -535,8 +535,8 @@ export default function Index() {
               </ul>
               <a href="#form" className="btn-primary">Записаться</a>
             </div>
-            <div className="promo-gift reveal" style={{background:'none',boxShadow:'none',padding:'0',display:'flex',alignItems:'center',justifyContent:'center'}}>
-              <div style={{position:'relative',display:'inline-block'}}>
+            <div className="promo-gift" style={{background:'none',boxShadow:'none',padding:'0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+              <div className="reveal" style={{position:'relative',display:'inline-block'}}>
                 <div style={{
                   position:'absolute',
                   inset:0,

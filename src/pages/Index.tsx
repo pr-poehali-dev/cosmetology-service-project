@@ -627,7 +627,12 @@ export default function Index() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
                 Написать в Telegram
               </a>
-              <p className="form-privacy">🔒 Данные защищены. Не передаём третьим лицам.</p>
+              <p className="form-privacy" style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'24px',height:'24px',borderRadius:'50%',background:'var(--color-primary)',flexShrink:0}}>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="white"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                </span>
+                Данные защищены. Не передаём третьим лицам.
+              </p>
             </form>
           </div>
         </div>

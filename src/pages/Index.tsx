@@ -137,7 +137,9 @@ export default function Index() {
           <div className="pain-grid">
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.poehali.dev/files/dab68b14-4209-4bb0-b9c4-d253e32046ba.png" alt="Поры" className="program-icon-3d" style={{width:'64px',height:'64px',borderRadius:'50%',objectFit:'cover',flexShrink:0}} />
+                <div className="program-icon-3d" style={{width:'52px',height:'52px',minWidth:'52px',borderRadius:'50%',overflow:'hidden',background:'#9f72b0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <img src="https://cdn.poehali.dev/files/dab68b14-4209-4bb0-b9c4-d253e32046ba.png" alt="Поры" style={{width:'52px',height:'52px',objectFit:'cover',display:'block'}} />
+                </div>
               </div>
               <div className="pain-card-text">
                 <h3>Поры расширены, кожа тусклая</h3>
@@ -146,7 +148,9 @@ export default function Index() {
             </div>
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.poehali.dev/files/9b32beb0-6d23-4dde-ab28-f82b251d55b6.png" alt="Овал лица" className="program-icon-3d" style={{width:'64px',height:'64px',borderRadius:'50%',objectFit:'cover',flexShrink:0}} />
+                <div className="program-icon-3d" style={{width:'52px',height:'52px',minWidth:'52px',borderRadius:'50%',overflow:'hidden',background:'#9f72b0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <img src="https://cdn.poehali.dev/files/9b32beb0-6d23-4dde-ab28-f82b251d55b6.png" alt="Овал лица" style={{width:'52px',height:'52px',objectFit:'cover',display:'block'}} />
+                </div>
               </div>
               <div className="pain-card-text">
                 <h3>Овал «поплыл», появился второй подбородок</h3>
@@ -155,7 +159,9 @@ export default function Index() {
             </div>
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.poehali.dev/files/7e2d6def-1184-488e-ac64-ec19f572d50a.png" alt="Без инъекций" className="program-icon-3d" style={{width:'64px',height:'64px',borderRadius:'50%',objectFit:'cover',flexShrink:0}} />
+                <div className="program-icon-3d" style={{width:'52px',height:'52px',minWidth:'52px',borderRadius:'50%',overflow:'hidden',background:'#9f72b0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <img src="https://cdn.poehali.dev/files/7e2d6def-1184-488e-ac64-ec19f572d50a.png" alt="Без инъекций" style={{width:'52px',height:'52px',objectFit:'cover',display:'block'}} />
+                </div>
               </div>
               <div className="pain-card-text">
                 <h3>Боишься инъекций, но хочешь выглядеть свежо</h3>
@@ -164,7 +170,9 @@ export default function Index() {
             </div>
             <div className="pain-card reveal">
               <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <img src="https://cdn.poehali.dev/files/7f3dc05f-5c46-4610-ab63-1769e0b7ae7d.png" alt="Руки" className="program-icon-3d" style={{width:'64px',height:'64px',borderRadius:'50%',objectFit:'cover',flexShrink:0}} />
+                <div className="program-icon-3d" style={{width:'52px',height:'52px',minWidth:'52px',borderRadius:'50%',overflow:'hidden',background:'#9f72b0',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                  <img src="https://cdn.poehali.dev/files/7f3dc05f-5c46-4610-ab63-1769e0b7ae7d.png" alt="Руки" style={{width:'52px',height:'52px',objectFit:'cover',display:'block'}} />
+                </div>
               </div>
               <div className="pain-card-text">
                 <h3>Руки выдают возраст</h3>

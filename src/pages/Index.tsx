@@ -554,27 +554,74 @@ export default function Index() {
               <a href="#form" className="btn-primary">Записаться</a>
             </div>
             <div className="promo-gift" style={{background:'none',boxShadow:'none',padding:'0',display:'flex',alignItems:'center',justifyContent:'center'}}>
-              <div className="reveal" style={{position:'relative',display:'inline-block'}}>
+              <div className="reveal" style={{position:'relative',display:'inline-block',padding:'20px 20px 30px 10px'}}>
+                {/* Декоративный круг позади */}
+                <div style={{
+                  position:'absolute',
+                  width:'320px',
+                  height:'320px',
+                  borderRadius:'50%',
+                  background:'radial-gradient(circle, rgba(159,114,176,0.18) 0%, rgba(196,158,212,0.08) 70%, transparent 100%)',
+                  top:'-20px',
+                  right:'-20px',
+                  zIndex:0
+                }}/>
+                {/* Дальняя тень (самая размытая) */}
+                <div style={{
+                  position:'absolute',
+                  bottom:'-10px',
+                  left:'30px',
+                  right:'10px',
+                  height:'80%',
+                  borderRadius:'24px',
+                  background:'rgba(100,60,120,0.22)',
+                  filter:'blur(32px)',
+                  zIndex:0
+                }}/>
+                {/* Средняя тень */}
+                <div style={{
+                  position:'absolute',
+                  bottom:'0px',
+                  left:'20px',
+                  right:'5px',
+                  height:'60%',
+                  borderRadius:'24px',
+                  background:'rgba(159,114,176,0.28)',
+                  filter:'blur(14px)',
+                  zIndex:0
+                }}/>
+                {/* Декоративная рамка-карточка сзади */}
                 <div style={{
                   position:'absolute',
                   inset:0,
-                  borderRadius:'20px',
-                  background:'linear-gradient(135deg, rgba(200,160,180,0.45) 0%, rgba(180,130,160,0.25) 100%)',
-                  transform:'translate(12px, 14px)',
-                  filter:'blur(18px)',
-                  zIndex:0
+                  borderRadius:'24px',
+                  border:'1.5px solid rgba(159,114,176,0.25)',
+                  transform:'translate(10px, 10px) rotate(2deg)',
+                  background:'rgba(255,255,255,0.5)',
+                  backdropFilter:'blur(2px)',
+                  zIndex:1
                 }}/>
                 <img
-                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/72a51cf0-b89a-4764-add3-8bce493ee610.jpeg"
+                  src="https://cdn.poehali.dev/files/01919ea6-575b-472e-b797-203bdacb06d3.png"
                   alt="Косметолог"
                   style={{
                     position:'relative',
-                    zIndex:1,
+                    zIndex:2,
                     width:'100%',
-                    maxWidth:'380px',
+                    maxWidth:'370px',
                     borderRadius:'20px',
                     display:'block',
-                    boxShadow:'0 8px 40px rgba(160,100,140,0.22), 0 2px 12px rgba(0,0,0,0.10)'
+                    boxShadow:'0 2px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(120,70,150,0.22), 0 4px 16px rgba(0,0,0,0.12)',
+                    transform:'perspective(900px) rotateY(-3deg) rotateX(2deg)',
+                    transition:'transform 0.4s ease, box-shadow 0.4s ease'
+                  }}
+                  onMouseEnter={e=>{
+                    (e.currentTarget as HTMLImageElement).style.transform='perspective(900px) rotateY(0deg) rotateX(0deg) scale(1.03)';
+                    (e.currentTarget as HTMLImageElement).style.boxShadow='0 4px 12px rgba(0,0,0,0.10), 0 24px 64px rgba(120,70,150,0.32), 0 8px 24px rgba(0,0,0,0.15)';
+                  }}
+                  onMouseLeave={e=>{
+                    (e.currentTarget as HTMLImageElement).style.transform='perspective(900px) rotateY(-3deg) rotateX(2deg)';
+                    (e.currentTarget as HTMLImageElement).style.boxShadow='0 2px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(120,70,150,0.22), 0 4px 16px rgba(0,0,0,0.12)';
                   }}
                 />
               </div>

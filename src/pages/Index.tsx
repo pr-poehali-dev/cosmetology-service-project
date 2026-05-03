@@ -484,45 +484,29 @@ export default function Index() {
         </div>
       </section>
 
-      {/* БЛОК 7: ОТЗЫВЫ */}
-      <section id="reviews">
+      {/* БЛОК 7: ДО/ПОСЛЕ */}
+      <section id="results">
         <div className="container">
           <div className="section-header reveal">
-            <div className="section-eyebrow">Отзывы</div>
-            <h2 className="section-title">Что говорят клиенты</h2>
+            <div className="section-eyebrow">Результаты</div>
+            <h2 className="section-title">До и после процедур</h2>
           </div>
-          <div className="reviews-grid">
-            <div className="review-card reveal">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">«Пришла с жирной кожей и комедонами — ушла с ощущением новой кожи. Через курс из 5 процедур поры уменьшились вдвое. Теперь хожу только сюда»</p>
-              <div className="review-author">
-                <div className="review-avatar">А</div>
-                <div>
-                  <div className="review-name">Алина</div>
-                  <div className="review-meta">28 лет · Чистка лица</div>
+          <div className="before-after-grid">
+            <div className="before-after-card reveal">
+              <div className="before-after-image-wrap">
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/faa692c9-4359-4515-b6f5-cd286ee52bc3.jpeg"
+                  alt="RF лифтинг до и после"
+                  className="before-after-img"
+                />
+                <div className="before-after-labels">
+                  <span className="ba-label ba-label--before">До</span>
+                  <span className="ba-label ba-label--after">После</span>
                 </div>
               </div>
-            </div>
-            <div className="review-card reveal">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">«Боялась микронидлинга как огня. Оказалось — почти не больно, а результат шокировал. Постакне, которое не уходило 3 года, прошло за 4 сеанса»</p>
-              <div className="review-author">
-                <div className="review-avatar">Е</div>
-                <div>
-                  <div className="review-name">Екатерина</div>
-                  <div className="review-meta">34 года · Микронидлинг</div>
-                </div>
-              </div>
-            </div>
-            <div className="review-card reveal">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">«РФ-лифтинг — моя находка. Второй подбородок ушёл, овал подтянулся. Подруги спрашивают, что я сделала. Говорю: просто нашла хорошего косметолога»</p>
-              <div className="review-author">
-                <div className="review-avatar">М</div>
-                <div>
-                  <div className="review-name">Марина</div>
-                  <div className="review-meta">42 года · РФ-лифтинг</div>
-                </div>
+              <div className="before-after-info">
+                <div className="ba-procedure">RF лифтинг</div>
+                <div className="ba-client">Анастасия, 38 лет</div>
               </div>
             </div>
           </div>

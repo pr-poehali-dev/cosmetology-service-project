@@ -604,13 +604,9 @@ header {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
-.pain-icon img {
-  filter: hue-rotate(30deg) saturate(0.85);
-}
 .pain-card:hover .program-icon-3d {
   transform: translateY(-6px) scale(1.08) rotate(-3deg);
-  filter: hue-rotate(30deg) saturate(0.85)
-    drop-shadow(0 16px 28px rgba(0, 0, 0, 0.3))
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.3))
     drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 .pain-icon {

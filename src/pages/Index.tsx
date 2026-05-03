@@ -83,7 +83,7 @@ export default function Index() {
             <a href="#about" className="header-nav-link">Обо мне</a>
             <a href="#services" className="header-nav-link">Услуги</a>
             <a href="#programs" className="header-nav-link">Программы</a>
-            <a href="#reviews" className="header-nav-link">Отзывы</a>
+            <a href="#results" className="header-nav-link">Результаты</a>
             <a href="#form" className="header-nav-link">Запись</a>
           </nav>
           <div style={{display: 'flex', alignItems: 'center', gap: 'var(--space-2)'}}>
@@ -105,7 +105,7 @@ export default function Index() {
           <a href="#about" className="mobile-menu-link">Обо мне</a>
           <a href="#services" className="mobile-menu-link">Услуги</a>
           <a href="#programs" className="mobile-menu-link">Программы</a>
-          <a href="#reviews" className="mobile-menu-link">Отзывы</a>
+          <a href="#results" className="mobile-menu-link">Результаты</a>
           <a href="#form" className="mobile-menu-link">Запись</a>
         </div>
       )}
@@ -487,7 +487,7 @@ export default function Index() {
         <div className="container">
           <div className="section-header reveal">
             <div className="section-eyebrow">Результаты</div>
-            <h2 className="section-title">До и после процедур</h2>
+            <h2 className="section-title">До и После процедур</h2>
           </div>
         </div>
         <div className="ba-carousel-wrap">

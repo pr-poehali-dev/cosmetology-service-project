@@ -709,7 +709,7 @@ export default function Index() {
               </label>
               <button type="submit" className="form-submit" disabled={!agreed} style={{opacity: agreed ? 1 : 0.45, cursor: agreed ? 'pointer' : 'not-allowed', transition:'opacity var(--transition)'}}>[ ЗАПИСАТЬСЯ БЕСПЛАТНО → ]</button>
               <div className="form-divider">или</div>
-              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className="tg-btn">
+              <a href="https://t.me/Aleksandra_Rymar" target="_blank" rel="noopener noreferrer" className="tg-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.5l-2.946-.924c-.64-.203-.654-.64.136-.954l11.49-4.43c.534-.194 1.001.13.044.029z"/></svg>
                 Написать в Telegram
               </a>

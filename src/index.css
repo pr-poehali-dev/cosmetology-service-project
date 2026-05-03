@@ -262,10 +262,12 @@ header {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: clamp(var(--space-3), 2vw, var(--space-6));
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .header-nav-link {
-  font-size: var(--text-sm);
+  font-size: clamp(0.7rem, 1.1vw, var(--text-sm));
   font-weight: 500;
   color: var(--color-text-inverse);
   letter-spacing: 0.02em;

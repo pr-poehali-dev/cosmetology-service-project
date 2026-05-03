@@ -714,7 +714,7 @@ export default function Index() {
                 Написать в Telegram
               </a>
               <a href="https://max.ru/u/f9LHodD0cOJWNQYoHkdjIIwopAIiP3qxf2X9we8Lv4JkiaS7NcWkQqPzjvw" target="_blank" rel="noopener noreferrer" className="tg-btn" style={{background:'#6C3CE1', borderColor:'#6C3CE1', color:'#fff', marginTop:'8px'}}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 7.5h-2v5h-1v-5h-2v-1h5v1zm-7 0v2h2v1h-2v2h-1V9.5h-1v-1h2v1z"/></svg>
+                <img src="https://cdn.poehali.dev/files/cef57389-f268-4a39-9881-d5e7b39cc845.png" width="18" height="18" style={{borderRadius:'4px', objectFit:'cover'}} />
                 Написать в Макс
               </a>
               <p className="form-privacy" style={{display:'flex',alignItems:'center',gap:'8px'}}>
@@ -758,10 +758,10 @@ export default function Index() {
                 <a href="https://t.me/" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>Telegram-канал</a>
               </li>
               <li style={{display:'flex',alignItems:'center',gap:'8px'}}>
-                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'#6C3CE1',flexShrink:0}}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm1-13h-2v6h2V7zm0 8h-2v2h2v-2z"/></svg>
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'var(--color-primary)',flexShrink:0, overflow:'hidden'}}>
+                  <img src="https://cdn.poehali.dev/files/cef57389-f268-4a39-9881-d5e7b39cc845.png" width="28" height="28" style={{objectFit:'cover'}} />
                 </span>
-                <a href="https://max.ru/u/f9LHodD0cOJWNQYoHkdjIIwopAIiP3qxf2X9we8Lv4JkiaS7NcWkQqPzjvw" target="_blank" rel="noopener noreferrer" style={{color:'#6C3CE1'}}>Написать в Макс</a>
+                <a href="https://max.ru/u/f9LHodD0cOJWNQYoHkdjIIwopAIiP3qxf2X9we8Lv4JkiaS7NcWkQqPzjvw" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>Написать в Макс</a>
               </li>
             </ul>
           </div>

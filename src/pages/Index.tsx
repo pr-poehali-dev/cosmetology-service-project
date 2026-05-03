@@ -758,8 +758,8 @@ export default function Index() {
                 <a href="https://t.me/" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>Telegram-канал</a>
               </li>
               <li style={{display:'flex',alignItems:'center',gap:'8px'}}>
-                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'var(--color-primary)',flexShrink:0, overflow:'hidden'}}>
-                  <img src="https://cdn.poehali.dev/files/cef57389-f268-4a39-9881-d5e7b39cc845.png" width="28" height="28" style={{objectFit:'cover'}} />
+                <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:'28px',height:'28px',borderRadius:'50%',background:'#6C3CE1',flexShrink:0}}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
                 </span>
                 <a href="https://max.ru/u/f9LHodD0cOJWNQYoHkdjIIwopAIiP3qxf2X9we8Lv4JkiaS7NcWkQqPzjvw" target="_blank" rel="noopener noreferrer" style={{color:'var(--color-primary)'}}>Написать в Макс</a>
               </li>

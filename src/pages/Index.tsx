@@ -196,11 +196,13 @@ export default function Index() {
             {/* Фото слева */}
             <div className="about-photo-wrap reveal">
               <div className="about-photo-frame">
-                <img
-                  src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
-                  alt="Александра — косметолог в Артёме"
-                  className="about-photo-img"
-                />
+                <div className="about-photo-inner">
+                  <img
+                    src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
+                    alt="Александра — косметолог в Артёме"
+                    className="about-photo-img"
+                  />
+                </div>
               </div>
             </div>
 

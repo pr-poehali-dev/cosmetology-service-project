@@ -396,7 +396,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Мужское</div>
-              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f9d4.svg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/20ac42fe-ce87-44ca-b080-60af79ae0877.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Мужской уход</div>
               <div className="program-composition">Глубокая чистка + уход + тонизирование</div>
               <p className="program-desc">Мужская кожа требует особого подхода: более плотная, склонная к жирности и раздражению после бритья. Глубокая чистка, уход и тонизирование — всё, что нужно, чтобы выглядеть свежо и уверенно.</p>

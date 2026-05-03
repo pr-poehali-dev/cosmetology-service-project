@@ -777,14 +777,17 @@ header {
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
   transition:
-    box-shadow var(--transition),
-    transform var(--transition);
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
   display: flex;
   flex-direction: column;
   padding: var(--space-10);
   min-height: 340px;
   position: relative;
   overflow: hidden;
+  cursor: default;
 }
 .service-card::before {
   content: "";
@@ -794,10 +797,25 @@ header {
   right: 0;
   height: 4px;
   background: var(--color-primary);
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 .service-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.13);
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+}
+.service-card:hover .service-num {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+.service-card:hover .service-title {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
 }
 .service-card--wide {
   grid-column: span 2;

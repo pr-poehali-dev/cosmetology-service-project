@@ -199,7 +199,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="pain-conclusion reveal">
+          <div className="pain-conclusion reveal" style={{textAlign:'left'}}>
             <p>Ты не одна. 8 из 10 женщин, которые приходят впервые,<br/>говорят именно это.<br/>
             <strong>Хорошая новость: всё это решается без скальпеля и без страха.</strong></p>
           </div>

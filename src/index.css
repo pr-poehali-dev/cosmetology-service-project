@@ -5,24 +5,24 @@
 /* ===== DESIGN TOKENS ===== */
 :root,
 [data-theme="light"] {
-  --color-bg: #1e1c20;
-  --color-surface: #2a2730;
-  --color-surface-2: #332f3c;
-  --color-surface-offset: #3c3848;
-  --color-divider: #46404f;
-  --color-border: #524b5e;
-  --color-text: #f0eaf5;
-  --color-text-muted: #a89cb8;
-  --color-text-faint: #6b6075;
-  --color-text-inverse: #1e1c20;
+  --color-bg: #f5ecf2;
+  --color-surface: #eddce8;
+  --color-surface-2: #e4cedd;
+  --color-surface-offset: #dac0d0;
+  --color-divider: #e2d0d9;
+  --color-border: #d8c5d0;
+  --color-text: #1e1520;
+  --color-text-muted: #7a6272;
+  --color-text-faint: #c0aab6;
+  --color-text-inverse: #fdf8fa;
 
-  --color-primary: #d46fa8;
-  --color-primary-hover: #e080bc;
-  --color-primary-active: #c058a0;
-  --color-primary-highlight: #3a1f30;
+  --color-primary: #9f72b0;
+  --color-primary-hover: #8558a0;
+  --color-primary-active: #6b3f88;
+  --color-primary-highlight: #f0e5f6;
 
   --color-accent: #c9a84c;
-  --color-accent-light: #2a2010;
+  --color-accent-light: #fdf5e0;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -30,9 +30,9 @@
   --radius-xl: 1.25rem;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 1px 3px rgba(80, 30, 70, 0.07);
+  --shadow-md: 0 4px 16px rgba(80, 30, 70, 0.09);
+  --shadow-lg: 0 12px 40px rgba(80, 30, 70, 0.12);
 
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
@@ -93,10 +93,10 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #1e1524;
-  --color-surface: #2e2040;
-  --color-surface-2: #38294e;
-  --color-surface-offset: #42315c;
+  --color-bg: #150f18;
+  --color-surface: #1c1420;
+  --color-surface-2: #221825;
+  --color-surface-offset: #2a1f30;
   --color-divider: #33253c;
   --color-border: #3e2e4a;
   --color-text: #ede0f2;

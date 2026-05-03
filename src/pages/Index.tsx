@@ -459,14 +459,17 @@ export default function Index() {
             </div>
             <div className="why-visual reveal">
               <div className="why-stat-card">
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/e8827a3a-7abc-4873-8d38-ccc6cd0b1c8c.jpg" alt="" style={{width:'52px',height:'52px',objectFit:'cover',borderRadius:'50%',marginBottom:'var(--space-2)'}} />
                 <div className="why-stat-num">200+</div>
                 <div className="why-stat-label">довольных клиентов</div>
               </div>
               <div className="why-stat-card">
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/89fcae0d-217f-4ae1-91a0-dd4660a8d216.jpg" alt="" style={{width:'52px',height:'52px',objectFit:'cover',borderRadius:'50%',marginBottom:'var(--space-2)'}} />
                 <div className="why-stat-num">7</div>
                 <div className="why-stat-label">аппаратных и ручных методик</div>
               </div>
               <div className="why-stat-card">
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/72b6594d-7be3-4df9-a201-ee1a9e27da73.jpg" alt="" style={{width:'52px',height:'52px',objectFit:'cover',borderRadius:'50%',marginBottom:'var(--space-2)'}} />
                 <div className="why-stat-num">98%</div>
                 <div className="why-stat-label">клиентов приходят снова</div>
               </div>

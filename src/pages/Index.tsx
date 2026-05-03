@@ -491,92 +491,30 @@ export default function Index() {
             <div className="section-eyebrow">Результаты</div>
             <h2 className="section-title">До и после процедур</h2>
           </div>
-          <div className="before-after-grid">
-            <div className="before-after-card reveal">
-              <div className="before-after-image-wrap">
-                <img
-                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/faa692c9-4359-4515-b6f5-cd286ee52bc3.jpeg"
-                  alt="RF лифтинг до и после"
-                  className="before-after-img"
-                />
-                <div className="before-after-labels">
-                  <span className="ba-label ba-label--before">До</span>
-                  <span className="ba-label ba-label--after">После</span>
+        </div>
+        <div className="ba-carousel-wrap">
+          <div className="ba-carousel">
+            {[
+              { src: "https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/faa692c9-4359-4515-b6f5-cd286ee52bc3.jpeg", procedure: "RF лифтинг", client: "Анастасия, 38 лет" },
+              { src: "https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/531c50c5-b03a-44e1-a117-4eee9bfc3b7b.jpeg", procedure: "Пилинг BioRePeel", client: "Марина, 41 год" },
+              { src: "https://cdn.poehali.dev/files/12ee7015-7969-4e44-b393-1afda3495419.jpg", procedure: "Антивозрастной комплексный уход", client: "Ольга, 53 года" },
+              { src: "https://cdn.poehali.dev/files/3415a265-c723-451a-aa19-67c6d91cb8aa.jpg", procedure: "Пилинг", client: "Ирина, 37 лет" },
+              { src: "https://cdn.poehali.dev/files/9649e1ea-e985-46d1-8a28-09834d14a855.jpg", procedure: "Фракционная мезотерапия", client: "Светлана, 39 лет" },
+            ].map((item, i) => (
+              <div className="before-after-card" key={i}>
+                <div className="before-after-image-wrap">
+                  <img src={item.src} alt={`${item.procedure} до и после`} className="before-after-img" />
+                  <div className="before-after-labels">
+                    <span className="ba-label ba-label--before">До</span>
+                    <span className="ba-label ba-label--after">После</span>
+                  </div>
+                </div>
+                <div className="before-after-info">
+                  <div className="ba-procedure">{item.procedure}</div>
+                  <div className="ba-client">{item.client}</div>
                 </div>
               </div>
-              <div className="before-after-info">
-                <div className="ba-procedure">RF лифтинг</div>
-                <div className="ba-client">Анастасия, 38 лет</div>
-              </div>
-            </div>
-            <div className="before-after-card reveal">
-              <div className="before-after-image-wrap">
-                <img
-                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/531c50c5-b03a-44e1-a117-4eee9bfc3b7b.jpeg"
-                  alt="Пилинг BioRePeel до и после"
-                  className="before-after-img"
-                />
-                <div className="before-after-labels">
-                  <span className="ba-label ba-label--before">До</span>
-                  <span className="ba-label ba-label--after">После</span>
-                </div>
-              </div>
-              <div className="before-after-info">
-                <div className="ba-procedure">Пилинг BioRePeel</div>
-                <div className="ba-client">Марина, 41 год</div>
-              </div>
-            </div>
-            <div className="before-after-card reveal">
-              <div className="before-after-image-wrap">
-                <img
-                  src="https://cdn.poehali.dev/files/12ee7015-7969-4e44-b393-1afda3495419.jpg"
-                  alt="Антивозрастной комплексный уход до и после"
-                  className="before-after-img"
-                />
-                <div className="before-after-labels">
-                  <span className="ba-label ba-label--before">До</span>
-                  <span className="ba-label ba-label--after">После</span>
-                </div>
-              </div>
-              <div className="before-after-info">
-                <div className="ba-procedure">Антивозрастной комплексный уход</div>
-                <div className="ba-client">Ольга, 53 года</div>
-              </div>
-            </div>
-            <div className="before-after-card reveal">
-              <div className="before-after-image-wrap">
-                <img
-                  src="https://cdn.poehali.dev/files/3415a265-c723-451a-aa19-67c6d91cb8aa.jpg"
-                  alt="Пилинг до и после"
-                  className="before-after-img"
-                />
-                <div className="before-after-labels">
-                  <span className="ba-label ba-label--before">До</span>
-                  <span className="ba-label ba-label--after">После</span>
-                </div>
-              </div>
-              <div className="before-after-info">
-                <div className="ba-procedure">Пилинг</div>
-                <div className="ba-client">Ирина, 37 лет</div>
-              </div>
-            </div>
-            <div className="before-after-card reveal">
-              <div className="before-after-image-wrap">
-                <img
-                  src="https://cdn.poehali.dev/files/9649e1ea-e985-46d1-8a28-09834d14a855.jpg"
-                  alt="Фракционная мезотерапия до и после"
-                  className="before-after-img"
-                />
-                <div className="before-after-labels">
-                  <span className="ba-label ba-label--before">До</span>
-                  <span className="ba-label ba-label--after">После</span>
-                </div>
-              </div>
-              <div className="before-after-info">
-                <div className="ba-procedure">Фракционная мезотерапия</div>
-                <div className="ba-client">Светлана, 39 лет</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

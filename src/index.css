@@ -93,10 +93,10 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #150f18;
-  --color-surface: #1c1420;
-  --color-surface-2: #221825;
-  --color-surface-offset: #2a1f30;
+  --color-bg: #1e1524;
+  --color-surface: #2e2040;
+  --color-surface-2: #38294e;
+  --color-surface-offset: #42315c;
   --color-divider: #33253c;
   --color-border: #3e2e4a;
   --color-text: #ede0f2;

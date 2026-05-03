@@ -357,49 +357,49 @@ export default function Index() {
           </div>
           <div className="programs-grid">
             <div className="program-card reveal">
-              <div className="program-badge">Хит</div>
+              <div className="program-badge">Хит сезона</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/d4f5b66e-9170-4f50-ab95-e962f7f8f659.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Релакс</div>
-              <div className="program-composition">Ультразвуковая чистка + пилинг + массаж лица + маска</div>
-              <p className="program-desc">Идеальная программа для тех, кто давно не баловал себя уходом или просто хочет «перезагрузиться». Полный цикл за один визит: очищение, обновление, расслабление, питание.</p>
-              <p className="program-fits"><strong>Подходит:</strong> всем типам кожи, особенно уставшей и тусклой.</p>
-              <div className="program-effect">✨ Ощущение после: как будто поменяла кожу</div>
+              <div className="program-composition">Ультразвуковая чистка · Пилинг · Массаж лица · Маска</div>
+              <p className="program-desc">Полная перезагрузка за один визит. Очищаем, обновляем, расслабляем и питаем — кожа выходит из кабинета другой. Это не просто процедура, это маленький отпуск для лица.</p>
+              <p className="program-fits"><strong>Для кого:</strong> любой тип кожи — особенно уставшая, тусклая, без тонуса.</p>
+              <div className="program-effect">✨ Выходишь с ощущением, что поменяла кожу</div>
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Сияние</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/f66b42e0-df5e-4342-a9c1-0704ac2e125e.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Фарфоровая куколка</div>
-              <div className="program-composition">Ультразвуковая чистка + фонофорез с детокс-капсулами</div>
-              <p className="program-desc">Аппаратная программа для глубокого детокса и сияния. Ультразвук открывает каналы в коже, фонофорез доставляет детокс-капсулы точно в дерму. Кожа становится светлой, ровной и буквально светится изнутри.</p>
-              <p className="program-fits"><strong>Подходит:</strong> тусклая, пористая кожа, усталость после стресса.</p>
-              <div className="program-effect">✨ Фарфоровая текстура, детокс, внутреннее сияние</div>
+              <div className="program-composition">Ультразвуковая чистка · Фонофорез с детокс-капсулами</div>
+              <p className="program-desc">Ультразвук раскрывает поры, фонофорез доставляет детокс прямо в дерму. Никакого покраснения, никакого восстановления — только светлая, ровная, сияющая кожа уже на следующий день.</p>
+              <p className="program-fits"><strong>Для кого:</strong> тусклая кожа, расширенные поры, усталость от стресса.</p>
+              <div className="program-effect">✨ Фарфоровая текстура и внутреннее свечение</div>
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Интенсив</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/afc2367d-c422-431d-a7b7-64e3758cfa48.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Глубокое увлажнение</div>
-              <div className="program-composition">Ультразвуковая чистка + пилинг + микронидлинг</div>
-              <p className="program-desc">Трёхступенчатая программа интенсивного обновления. Сначала очищаем и подготавливаем кожу, затем дермапен доставляет сыворотку с гиалуроновой кислотой в глубокие слои. Эффект держится неделями.</p>
-              <p className="program-fits"><strong>Подходит:</strong> сухая, обезвоженная кожа, первые признаки старения.</p>
-              <div className="program-effect">✨ Кожа как после капельницы — наполненная, упругая, молодая</div>
+              <div className="program-composition">Ультразвуковая чистка · Пилинг · Микронидлинг</div>
+              <p className="program-desc">Три шага, один результат — кожа, которая выглядит отдохнувшей неделями. Дермапен доставляет гиалуроновую сыворотку в глубокие слои. Это то самое «увлажнение изнутри», о котором все говорят.</p>
+              <p className="program-fits"><strong>Для кого:</strong> сухая, обезвоженная кожа, первые морщины.</p>
+              <div className="program-effect">✨ Наполненная, упругая, молодая кожа</div>
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Уход</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/eaab8f48-ab98-438e-bb95-dfa2c00dbfc7.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Спа для рук</div>
-              <div className="program-composition">Пилинг + питательная маска + массаж рук</div>
-              <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>
-              <p className="program-fits"><strong>Подходит:</strong> для регулярного ухода, особенно в холодное время года.</p>
-              <div className="program-effect">✨ Молодые, ухоженные руки после первого сеанса</div>
+              <div className="program-composition">Пилинг · Питательная маска · Массаж рук</div>
+              <p className="program-desc">Руки выдают возраст быстрее лица — и чаще всего остаются без внимания. Пилинг снимает ороговевший слой, маска питает, массаж возвращает нежность. Один сеанс — и руки снова хочется показывать.</p>
+              <p className="program-fits"><strong>Для кого:</strong> регулярный уход, особенно осенью и зимой.</p>
+              <div className="program-effect">✨ Мягкие, ухоженные, молодые руки</div>
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Мужское</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/20ac42fe-ce87-44ca-b080-60af79ae0877.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Мужской уход</div>
-              <div className="program-composition">Глубокая чистка + уход + тонизирование</div>
-              <p className="program-desc">Мужская кожа требует особого подхода: более плотная, склонная к жирности и раздражению после бритья. Глубокая чистка, уход и тонизирование — всё, что нужно, чтобы выглядеть свежо и уверенно.</p>
-              <p className="program-fits"><strong>Подходит:</strong> для мужчин с любым типом кожи.</p>
-              <div className="program-effect">✦ Чёткий овал — чёткий мужчина</div>
+              <div className="program-composition">Глубокая чистка · Профессиональный уход · Тонизирование</div>
+              <p className="program-desc">Мужская кожа грубее, жирнее и чаще раздражается после бритья. Программа разработана с учётом этих особенностей: глубокая чистка, интенсивный уход и тонизирование — свежий вид без лишних слов.</p>
+              <p className="program-fits"><strong>Для кого:</strong> мужчины с любым типом кожи.</p>
+              <div className="program-effect">✦ Чёткий овал — уверенный мужчина</div>
             </div>
           </div>
           <div className="services-cta-row reveal">

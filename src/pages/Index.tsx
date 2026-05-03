@@ -560,6 +560,23 @@ export default function Index() {
                 <div className="ba-client">Ирина, 37 лет</div>
               </div>
             </div>
+            <div className="before-after-card reveal">
+              <div className="before-after-image-wrap">
+                <img
+                  src="https://cdn.poehali.dev/files/9649e1ea-e985-46d1-8a28-09834d14a855.jpg"
+                  alt="Фракционная мезотерапия до и после"
+                  className="before-after-img"
+                />
+                <div className="before-after-labels">
+                  <span className="ba-label ba-label--before">До</span>
+                  <span className="ba-label ba-label--after">После</span>
+                </div>
+              </div>
+              <div className="before-after-info">
+                <div className="ba-procedure">Фракционная мезотерапия</div>
+                <div className="ba-client">Светлана, 39 лет</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

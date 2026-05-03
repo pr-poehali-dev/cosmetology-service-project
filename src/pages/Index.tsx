@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Index() {
   const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
   const [agreed, setAgreed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightbox, setLightbox] = useState<{ src: string; procedure: string; client: string } | null>(null);
+  const baCarouselRef = useRef<HTMLDivElement>(null);
+  const scrollCarousel = (dir: 'prev' | 'next') => {
+    const el = baCarouselRef.current;
+    if (!el) return;
+    const card = el.querySelector('.before-after-card') as HTMLElement | null;
+    const step = card ? card.offsetWidth + 24 : 280;
+    el.scrollBy({ left: dir === 'next' ? step : -step, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     // Dark mode toggle
@@ -483,7 +491,9 @@ export default function Index() {
           </div>
         </div>
         <div className="ba-carousel-wrap">
-          <div className="ba-carousel">
+          <button className="ba-nav-btn ba-nav-btn--prev" onClick={() => scrollCarousel('prev')} aria-label="Назад">&#8592;</button>
+          <button className="ba-nav-btn ba-nav-btn--next" onClick={() => scrollCarousel('next')} aria-label="Вперёд">&#8594;</button>
+          <div className="ba-carousel" ref={baCarouselRef}>
             {[
               { src: "https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/faa692c9-4359-4515-b6f5-cd286ee52bc3.jpeg", procedure: "RF лифтинг", client: "Анастасия, 38 лет" },
               { src: "https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/531c50c5-b03a-44e1-a117-4eee9bfc3b7b.jpeg", procedure: "Пилинг BioRePeel", client: "Марина, 41 год" },

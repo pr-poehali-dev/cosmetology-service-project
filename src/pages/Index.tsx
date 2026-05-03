@@ -4,6 +4,7 @@ export default function Index() {
   const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
   const [agreed, setAgreed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lightbox, setLightbox] = useState<{ src: string; procedure: string; client: string } | null>(null);
 
   useEffect(() => {
     // Dark mode toggle
@@ -501,13 +502,14 @@ export default function Index() {
               { src: "https://cdn.poehali.dev/files/3415a265-c723-451a-aa19-67c6d91cb8aa.jpg", procedure: "Пилинг", client: "Ирина, 37 лет" },
               { src: "https://cdn.poehali.dev/files/9649e1ea-e985-46d1-8a28-09834d14a855.jpg", procedure: "Фракционная мезотерапия", client: "Светлана, 39 лет" },
             ].map((item, i) => (
-              <div className="before-after-card" key={i}>
+              <div className="before-after-card" key={i} onClick={() => setLightbox(item)}>
                 <div className="before-after-image-wrap">
                   <img src={item.src} alt={`${item.procedure} до и после`} className="before-after-img" />
                   <div className="before-after-labels">
                     <span className="ba-label ba-label--before">До</span>
                     <span className="ba-label ba-label--after">После</span>
                   </div>
+                  <div className="ba-zoom-hint">🔍</div>
                 </div>
                 <div className="before-after-info">
                   <div className="ba-procedure">{item.procedure}</div>
@@ -517,6 +519,25 @@ export default function Index() {
             ))}
           </div>
         </div>
+
+        {lightbox && (
+          <div className="ba-lightbox" onClick={() => setLightbox(null)}>
+            <div className="ba-lightbox-inner" onClick={e => e.stopPropagation()}>
+              <button className="ba-lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+              <div className="ba-lightbox-img-wrap">
+                <img src={lightbox.src} alt={lightbox.procedure} className="ba-lightbox-img" />
+                <div className="before-after-labels">
+                  <span className="ba-label ba-label--before">До</span>
+                  <span className="ba-label ba-label--after">После</span>
+                </div>
+              </div>
+              <div className="ba-lightbox-info">
+                <div className="ba-procedure">{lightbox.procedure}</div>
+                <div className="ba-client">{lightbox.client}</div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* БЛОК 8: АКЦИЯ */}

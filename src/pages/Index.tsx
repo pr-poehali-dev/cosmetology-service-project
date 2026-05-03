@@ -181,47 +181,36 @@ export default function Index() {
       </section>
 
       {/* БЛОК 3: О МАСТЕРЕ */}
-      <section id="about" style={{padding:'var(--space-12) 0'}}>
+      <section id="about" className="about-section">
         <div className="container">
-          <div style={{display:'flex', flexDirection:'row', gap:'var(--space-10)', alignItems:'center'}}>
+          <div className="about-layout">
 
-            {/* Фото слева — квадрат с отступами */}
-            <div className="reveal" style={{flexShrink:0, width:'460px', padding:'var(--space-4)', marginLeft:'-var(--space-4)'}}>
-              <div style={{position:'relative', width:'100%', paddingBottom:'100%', borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'0 20px 60px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.15)'}}>
+            {/* Фото слева */}
+            <div className="about-photo-wrap reveal">
+              <div className="about-photo-frame">
                 <img
                   src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
                   alt="Александра — косметолог в Артёме"
-                  style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',display:'block'}}
+                  className="about-photo-img"
                 />
               </div>
             </div>
 
             {/* Текст справа */}
-            <div className="reveal" style={{flex:'1 1 0', minWidth:0}}>
+            <div className="about-content reveal">
               <div className="about-eyebrow">Косметолог, которому доверяют лицо</div>
-              <h2 className="about-title" style={{fontSize:'var(--text-xl)', marginBottom:'var(--space-3)'}}>Привет, я — Александра</h2>
-              <div className="about-principle" style={{fontSize:'var(--text-lg)', marginBottom:'var(--space-4)'}}>
+              <h2 className="about-title">Привет, я — Александра</h2>
+              <div className="about-principle">
                 «Лучший аксессуар, который ты носишь каждый день — это твоя кожа. Пусть он будет безупречен»
               </div>
-              <p style={{fontSize:'var(--text-sm)',color:'var(--color-text-muted)',marginBottom:'var(--space-4)',lineHeight:'1.6'}}>
+              <p className="about-desc">
                 Я специализируюсь на эстетической косметологии — от базового ухода до аппаратных методик омоложения. Работаю в уютном кабинете без очередей и спешки: каждый клиент получает полное внимание и индивидуальный протокол.
               </p>
-              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'var(--space-3)', marginBottom:'var(--space-5)', alignItems:'start'}}>
-                <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                  <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
-                  <span>Только сертифицированные аппараты и профессиональная косметика</span>
-                </div>
-                <div style={{display:'flex', flexDirection:'column', gap:'var(--space-3)'}}>
-                  <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                    <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
-                    <span>Индивидуальный протокол для каждого клиента</span>
-                  </div>
-                  <div style={{display:'flex', alignItems:'flex-start', gap:'var(--space-2)', fontSize:'var(--text-sm)', color:'var(--color-text-muted)'}}>
-                    <span style={{color:'var(--color-primary)', flexShrink:0}}>✦</span>
-                    <span>Уютный кабинет — без очередей и спешки</span>
-                  </div>
-                </div>
-              </div>
+              <ul className="about-features">
+                <li><span className="about-star">✦</span><span>Только сертифицированные аппараты и профессиональная косметика</span></li>
+                <li><span className="about-star">✦</span><span>Индивидуальный протокол для каждого клиента</span></li>
+                <li><span className="about-star">✦</span><span>Уютный кабинет — без очередей и спешки</span></li>
+              </ul>
               <a href="#form" className="btn-primary">Записаться</a>
             </div>
 

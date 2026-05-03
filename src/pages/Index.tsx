@@ -62,12 +62,30 @@ export default function Index() {
     };
   }, []);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const btn = e.currentTarget.querySelector('.form-submit') as HTMLButtonElement;
-    btn.textContent = '✓ Заявка отправлена! Скоро свяжемся.';
-    btn.style.background = '#437a22';
+    const form = e.currentTarget;
+    const btn = form.querySelector('.form-submit') as HTMLButtonElement;
+    const name = (form.querySelector('#name') as HTMLInputElement).value;
+    const phone = (form.querySelector('#phone') as HTMLInputElement).value;
+    const service = (form.querySelector('#service') as HTMLSelectElement).value;
+
+    btn.textContent = 'Отправляем...';
     btn.disabled = true;
+
+    try {
+      await fetch('https://functions.poehali.dev/d16756c0-c94f-4c7a-b060-382ccfedf423', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, service }),
+      });
+      btn.textContent = '✓ Заявка отправлена! Скоро свяжемся.';
+      btn.style.background = '#437a22';
+    } catch {
+      btn.textContent = 'Ошибка. Позвоните нам напрямую.';
+      btn.style.background = '#c0392b';
+      btn.disabled = false;
+    }
   }
 
   return (

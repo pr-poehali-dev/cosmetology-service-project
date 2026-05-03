@@ -543,6 +543,23 @@ export default function Index() {
                 <div className="ba-client">Ольга, 53 года</div>
               </div>
             </div>
+            <div className="before-after-card reveal">
+              <div className="before-after-image-wrap">
+                <img
+                  src="https://cdn.poehali.dev/files/3415a265-c723-451a-aa19-67c6d91cb8aa.jpg"
+                  alt="Пилинг до и после"
+                  className="before-after-img"
+                />
+                <div className="before-after-labels">
+                  <span className="ba-label ba-label--before">До</span>
+                  <span className="ba-label ba-label--after">После</span>
+                </div>
+              </div>
+              <div className="before-after-info">
+                <div className="ba-procedure">Пилинг</div>
+                <div className="ba-client">Ирина, 37 лет</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

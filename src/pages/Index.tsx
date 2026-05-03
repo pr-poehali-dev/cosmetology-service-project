@@ -387,7 +387,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Уход</div>
-              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f485.svg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/eaab8f48-ab98-438e-bb95-dfa2c00dbfc7.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Спа для рук</div>
               <div className="program-composition">Пилинг + питательная маска + массаж рук</div>
               <p className="program-desc">Руки выдают возраст быстрее лица. Процедура включает пилинг, питательную маску, массаж — кожа становится мягкой, ухоженной и нежной.</p>

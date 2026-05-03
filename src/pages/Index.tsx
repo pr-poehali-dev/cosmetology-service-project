@@ -509,6 +509,23 @@ export default function Index() {
                 <div className="ba-client">Анастасия, 38 лет</div>
               </div>
             </div>
+            <div className="before-after-card reveal">
+              <div className="before-after-image-wrap">
+                <img
+                  src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/531c50c5-b03a-44e1-a117-4eee9bfc3b7b.jpeg"
+                  alt="Пилинг BioRePeel до и после"
+                  className="before-after-img"
+                />
+                <div className="before-after-labels">
+                  <span className="ba-label ba-label--before">До</span>
+                  <span className="ba-label ba-label--after">После</span>
+                </div>
+              </div>
+              <div className="before-after-info">
+                <div className="ba-procedure">Пилинг BioRePeel</div>
+                <div className="ba-client">Марина, 41 год</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -360,7 +360,7 @@ export default function Index() {
           <div className="programs-grid">
             <div className="program-card reveal">
               <div className="program-badge">Хит</div>
-              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f33f.svg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/d4f5b66e-9170-4f50-ab95-e962f7f8f659.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Релакс</div>
               <div className="program-composition">Ультразвуковая чистка + пилинг + массаж лица + маска</div>
               <p className="program-desc">Идеальная программа для тех, кто давно не баловал себя уходом или просто хочет «перезагрузиться». Полный цикл за один визит: очищение, обновление, расслабление, питание.</p>
@@ -369,7 +369,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Сияние</div>
-              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f90d.svg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/f66b42e0-df5e-4342-a9c1-0704ac2e125e.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Фарфоровая куколка</div>
               <div className="program-composition">Ультразвуковая чистка + фонофорез с детокс-капсулами</div>
               <p className="program-desc">Аппаратная программа для глубокого детокса и сияния. Ультразвук открывает каналы в коже, фонофорез доставляет детокс-капсулы точно в дерму. Кожа становится светлой, ровной и буквально светится изнутри.</p>
@@ -378,7 +378,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Интенсив</div>
-              <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4a7.svg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/afc2367d-c422-431d-a7b7-64e3758cfa48.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Глубокое увлажнение</div>
               <div className="program-composition">Ультразвуковая чистка + пилинг + микронидлинг</div>
               <p className="program-desc">Трёхступенчатая программа интенсивного обновления. Сначала очищаем и подготавливаем кожу, затем дермапен доставляет сыворотку с гиалуроновой кислотой в глубокие слои. Эффект держится неделями.</p>

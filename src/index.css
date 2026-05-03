@@ -1000,6 +1000,9 @@ header {
   padding: var(--space-6);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .why-stat-num {
   font-size: var(--text-2xl);
@@ -1011,12 +1014,7 @@ header {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
-.why-icons-row {
-  display: flex;
-  gap: var(--space-5);
-  justify-content: center;
-  margin-bottom: var(--space-2);
-}
+
 .why-icon-3d {
   width: 80px;
   height: 80px;

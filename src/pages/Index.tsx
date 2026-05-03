@@ -136,10 +136,8 @@ export default function Index() {
           </div>
           <div className="pain-grid">
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <div className="program-icon-3d" style={{width:'44px',height:'44px',minWidth:'44px',borderRadius:'50%',overflow:'hidden',background:'var(--color-primary)',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <img src="https://cdn.poehali.dev/files/dab68b14-4209-4bb0-b9c4-d253e32046ba.png" alt="Поры" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
-                </div>
+              <div className="pain-icon program-icon-3d">
+                <img src="https://cdn.poehali.dev/files/dab68b14-4209-4bb0-b9c4-d253e32046ba.png" alt="Поры" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
               </div>
               <div className="pain-card-text">
                 <h3>Поры расширены, кожа тусклая</h3>
@@ -147,10 +145,8 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <div className="program-icon-3d" style={{width:'44px',height:'44px',minWidth:'44px',borderRadius:'50%',overflow:'hidden',background:'var(--color-primary)',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <img src="https://cdn.poehali.dev/files/9b32beb0-6d23-4dde-ab28-f82b251d55b6.png" alt="Овал лица" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
-                </div>
+              <div className="pain-icon program-icon-3d">
+                <img src="https://cdn.poehali.dev/files/9b32beb0-6d23-4dde-ab28-f82b251d55b6.png" alt="Овал лица" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
               </div>
               <div className="pain-card-text">
                 <h3>Овал «поплыл», появился второй подбородок</h3>
@@ -158,10 +154,8 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <div className="program-icon-3d" style={{width:'44px',height:'44px',minWidth:'44px',borderRadius:'50%',overflow:'hidden',background:'var(--color-primary)',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <img src="https://cdn.poehali.dev/files/7e2d6def-1184-488e-ac64-ec19f572d50a.png" alt="Без инъекций" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
-                </div>
+              <div className="pain-icon program-icon-3d">
+                <img src="https://cdn.poehali.dev/files/7e2d6def-1184-488e-ac64-ec19f572d50a.png" alt="Без инъекций" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
               </div>
               <div className="pain-card-text">
                 <h3>Боишься инъекций, но хочешь выглядеть свежо</h3>
@@ -169,10 +163,8 @@ export default function Index() {
               </div>
             </div>
             <div className="pain-card reveal">
-              <div className="pain-icon" style={{background:'transparent', flexShrink:0}}>
-                <div className="program-icon-3d" style={{width:'44px',height:'44px',minWidth:'44px',borderRadius:'50%',overflow:'hidden',background:'var(--color-primary)',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <img src="https://cdn.poehali.dev/files/7f3dc05f-5c46-4610-ab63-1769e0b7ae7d.png" alt="Руки" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
-                </div>
+              <div className="pain-icon program-icon-3d">
+                <img src="https://cdn.poehali.dev/files/7f3dc05f-5c46-4610-ab63-1769e0b7ae7d.png" alt="Руки" style={{width:'44px',height:'44px',objectFit:'cover',display:'block'}} />
               </div>
               <div className="pain-card-text">
                 <h3>Руки выдают возраст</h3>

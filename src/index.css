@@ -613,12 +613,13 @@ header {
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  border-radius: var(--radius-md);
-  background: var(--color-primary-highlight);
-  color: var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .pain-card-text h3 {
   font-size: var(--text-base);

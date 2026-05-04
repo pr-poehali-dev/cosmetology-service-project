@@ -188,6 +188,11 @@ section {
   padding-block: clamp(var(--space-12), 6vw, var(--space-20));
 }
 
+/* ===== PLATFORM FIXES ===== */
+#gpt-boss-root {
+  display: none !important;
+}
+
 /* ===== HEADER ===== */
 header {
   position: sticky;

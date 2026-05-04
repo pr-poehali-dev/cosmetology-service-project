@@ -656,14 +656,14 @@ header {
   background: var(--color-primary-highlight);
   border-radius: var(--radius-lg);
   padding: var(--space-6) var(--space-8);
-  text-align: center;
+  text-align: left;
   border: 1px solid color-mix(in oklab, var(--color-primary) 20%, transparent);
 }
 .pain-conclusion p {
   font-size: var(--text-lg);
   color: var(--color-text);
   max-width: 60ch;
-  margin-inline: auto;
+  margin-inline: unset;
 }
 .pain-conclusion strong {
   color: var(--color-primary);

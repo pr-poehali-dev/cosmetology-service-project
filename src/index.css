@@ -191,6 +191,11 @@ section {
 /* ===== PLATFORM FIXES ===== */
 #gpt-boss-root {
   display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  position: absolute !important;
 }
 
 /* ===== HEADER ===== */

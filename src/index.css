@@ -126,6 +126,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   scroll-padding-top: 80px;
+  background: var(--color-bg);
 }
 body {
   font-family: var(--font-body);
@@ -418,6 +419,7 @@ header {
   position: relative;
   overflow: hidden;
   background: #0d0a10;
+  padding-block: 0;
 }
 .hero-video {
   position: absolute;

@@ -1207,6 +1207,60 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition:
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+.why-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-hover, #b080c0)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(
+    ellipse at top left,
+    color-mix(in oklab, var(--color-primary) 8%, transparent),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.why-stat-card:hover {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+}
+.why-stat-card:hover::before {
+  transform: scaleX(1);
+}
+.why-stat-card:hover::after {
+  opacity: 1;
+}
+.why-stat-card:hover .why-icon-3d {
+  transform: translateY(-8px) scale(1.12) rotate(-4deg);
+  filter: drop-shadow(0 20px 32px rgba(80, 30, 70, 0.35))
+    drop-shadow(0 5px 10px rgba(80, 30, 70, 0.22));
 }
 .why-stat-num {
   font-size: var(--text-2xl);

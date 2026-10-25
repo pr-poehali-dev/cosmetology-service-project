@@ -28,8 +28,8 @@ def handler(event: dict, context) -> dict:
     email_to = os.environ['EMAIL_TO']
     smtp_host = os.environ.get('SMTP_HOST', 'smtp.mail.ru')
     smtp_port = int(os.environ.get('SMTP_PORT', '465'))
-    smtp_user = os.environ['SMTP_USER']
-    smtp_pass = os.environ['SMTP_PASS']
+    smtp_user = os.environ['SMTP_USER'].strip()
+    smtp_pass = os.environ['SMTP_PASS'].replace(' ', '').strip()
 
     subject = f'Новая заявка с сайта: {name}'
     html_body = f"""

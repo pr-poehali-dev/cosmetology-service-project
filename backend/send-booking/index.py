@@ -55,8 +55,45 @@ def send_telegram(name: str, phone: str, service: str) -> None:
         resp.read()
 
 
+MAX_API = 'https://platform-api.max.ru'
+
+
+def max_request(method: str, path: str, payload: dict | None = None) -> dict:
+    token = os.environ['MAX_BOT_TOKEN'].strip()
+    data = json.dumps(payload).encode('utf-8') if payload is not None else None
+    req = urllib.request.Request(
+        f'{MAX_API}{path}',
+        data=data,
+        method=method,
+        headers={'Authorization': token, 'Content-Type': 'application/json'},
+    )
+    with urllib.request.urlopen(req, timeout=6) as resp:
+        return json.loads(resp.read() or b'{}')
+
+
+def send_max(name: str, phone: str, service: str) -> None:
+    user_id = os.environ['MAX_USER_ID'].strip()
+    text = (
+        '<b>Новая заявка с сайта</b>\n\n'
+        f'<b>Имя:</b> {escape(name)}\n'
+        f'<b>Телефон:</b> {escape(phone)}\n'
+        f'<b>Услуга:</b> {escape(service) or "не указана"}'
+    )
+    max_request('POST', f'/messages?user_id={user_id}', {'text': text, 'format': 'html'})
+
+
+def max_find_users() -> dict:
+    data = max_request('GET', '/updates?limit=100&timeout=0')
+    users = {}
+    for upd in data.get('updates', []):
+        u = upd.get('user') or (upd.get('message') or {}).get('sender') or {}
+        if u.get('user_id'):
+            users[str(u['user_id'])] = u.get('name') or u.get('first_name') or ''
+    return users
+
+
 def handler(event: dict, context) -> dict:
-    """Отправляет заявку с сайта на email и дублирует её в Telegram."""
+    """Отправляет заявку с сайта на email и дублирует её в MAX."""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {
@@ -69,6 +106,16 @@ def handler(event: dict, context) -> dict:
             },
             'body': ''
         }
+
+    if event.get('httpMethod') == 'GET':
+        params = event.get('queryStringParameters') or {}
+        if params.get('action') == 'max_users':
+            return {
+                'statusCode': 200,
+                'headers': {'Access-Control-Allow-Origin': '*'},
+                'body': json.dumps({'users': max_find_users()}, ensure_ascii=False)
+            }
+        return {'statusCode': 200, 'headers': {'Access-Control-Allow-Origin': '*'}, 'body': json.dumps({'ok': True})}
 
     body = json.loads(event.get('body') or '{}')
     name = body.get('name', '')
@@ -83,8 +130,12 @@ def handler(event: dict, context) -> dict:
             print(f'{channel} error: {e}')
             return channel, 'error'
 
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        results = dict(pool.map(lambda a: run(*a), (('email', send_email), ('telegram', send_telegram))))
+    channels = [('email', send_email), ('max', send_max)]
+    if os.environ.get('TELEGRAM_API_URL'):
+        channels.append(('telegram', send_telegram))
+
+    with ThreadPoolExecutor(max_workers=len(channels)) as pool:
+        results = dict(pool.map(lambda a: run(*a), channels))
 
     ok = 'ok' in results.values()
     return {

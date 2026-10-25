@@ -216,7 +216,7 @@ export default function Index() {
               <div className="about-photo-frame">
                 <div className="about-photo-inner">
                   <img
-                    src="https://cdn.poehali.dev/files/1cd6180d-bbad-42e0-8bfe-b7e562c537e8.jpeg"
+                    src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/619586ad-e5ad-466f-a99d-ac1b41fd3126.png"
                     alt="Александра — косметолог в Артёме"
                     className="about-photo-img"
                   />

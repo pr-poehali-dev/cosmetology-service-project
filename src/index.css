@@ -1172,6 +1172,66 @@ header {
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition:
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+.why-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-hover, #b080c0)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(
+    ellipse at top left,
+    color-mix(in oklab, var(--color-primary) 8%, transparent),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.why-item:hover {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+}
+.why-item:hover::before {
+  transform: scaleX(1);
+}
+.why-item:hover::after {
+  opacity: 1;
+}
+.why-item .why-icon {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center bottom;
+}
+.why-item:hover .why-icon {
+  transform: translateY(-4px) scale(1.12) rotate(-4deg);
 }
 .why-icon {
   width: 48px;
@@ -2129,5 +2189,24 @@ svg {
   .container,
   .header-inner {
     padding-inline: var(--space-8);
+  }
+}
+
+.why-item.reveal.visible {
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+.why-item.reveal.visible:hover {
+  transform: translateY(-6px);
+}
+@media (max-width: 480px) {
+  .why-item.reveal.visible:hover {
+    transform: none;
+  }
+  .why-item {
+    padding: var(--space-4);
   }
 }

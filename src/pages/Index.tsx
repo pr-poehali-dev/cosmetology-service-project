@@ -416,6 +416,7 @@ export default function Index() {
               <div className="program-badge">Мужское</div>
               <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/20ac42fe-ce87-44ca-b080-60af79ae0877.jpg" alt="" className="program-icon-3d" />
               <div className="program-title">Мужской уход</div>
+              <div className="program-composition">45 минут и по делам!</div>
               <div className="program-composition">Глубокая чистка · Профессиональный уход · Тонизирование</div>
               <p className="program-desc">Мужская кожа грубее, жирнее и чаще раздражается после бритья. Программа разработана с учётом этих особенностей: глубокая чистка, интенсивный уход и тонизирование — свежий вид без лишних слов.</p>
               <p className="program-fits"><strong>Для кого:</strong> мужчины с любым типом кожи.</p>

@@ -93,7 +93,7 @@ def max_find_users() -> dict:
 
 
 def handler(event: dict, context) -> dict:
-    """Отправляет заявку с сайта на email и дублирует её в MAX."""
+    """Отправляет заявку с сайта на email и дублирует её в Telegram и MAX."""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {
@@ -130,9 +130,9 @@ def handler(event: dict, context) -> dict:
             print(f'{channel} error: {e}')
             return channel, 'error'
 
-    channels = [('email', send_email), ('max', send_max)]
-    if os.environ.get('TELEGRAM_API_URL'):
-        channels.append(('telegram', send_telegram))
+    channels = [('email', send_email), ('telegram', send_telegram)]
+    if os.environ.get('MAX_USER_ID'):
+        channels.append(('max', send_max))
 
     with ThreadPoolExecutor(max_workers=len(channels)) as pool:
         results = dict(pool.map(lambda a: run(*a), channels))

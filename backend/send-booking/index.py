@@ -5,6 +5,7 @@ import urllib.request
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from html import escape
+from concurrent.futures import ThreadPoolExecutor
 
 
 def send_email(name: str, phone: str, service: str) -> None:
@@ -44,12 +45,13 @@ def send_telegram(name: str, phone: str, service: str) -> None:
         f'<b>Услуга:</b> {escape(service) or "не указана"}'
     )
     payload = json.dumps({'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}).encode('utf-8')
+    api_base = os.environ.get('TELEGRAM_API_URL', 'https://api.telegram.org').strip().rstrip('/')
     req = urllib.request.Request(
-        f'https://api.telegram.org/bot{token}/sendMessage',
+        f'{api_base}/bot{token}/sendMessage',
         data=payload,
         headers={'Content-Type': 'application/json'},
     )
-    with urllib.request.urlopen(req, timeout=10) as resp:
+    with urllib.request.urlopen(req, timeout=6) as resp:
         resp.read()
 
 
@@ -73,14 +75,16 @@ def handler(event: dict, context) -> dict:
     phone = body.get('phone', '')
     service = body.get('service', '')
 
-    results = {}
-    for channel, sender in (('email', send_email), ('telegram', send_telegram)):
+    def run(channel, sender):
         try:
             sender(name, phone, service)
-            results[channel] = 'ok'
+            return channel, 'ok'
         except Exception as e:
             print(f'{channel} error: {e}')
-            results[channel] = 'error'
+            return channel, 'error'
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        results = dict(pool.map(lambda a: run(*a), (('email', send_email), ('telegram', send_telegram))))
 
     ok = 'ok' in results.values()
     return {

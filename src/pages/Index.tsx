@@ -74,11 +74,12 @@ export default function Index() {
     btn.disabled = true;
 
     try {
-      await fetch('https://functions.poehali.dev/d16756c0-c94f-4c7a-b060-382ccfedf423', {
+      const res = await fetch('https://functions.poehali.dev/d16756c0-c94f-4c7a-b060-382ccfedf423', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, service }),
       });
+      if (!res.ok) throw new Error('send failed');
       btn.textContent = '✓ Заявка отправлена! Скоро свяжемся.';
       btn.style.background = '#437a22';
     } catch {

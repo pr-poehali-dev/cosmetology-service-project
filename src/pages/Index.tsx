@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import FaqSection from "@/components/FaqSection";
 
 export default function Index() {
   const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
@@ -656,6 +657,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <FaqSection />
 
       {/* БЛОК 9: ФОРМА */}
       <section className="form-section" id="form">

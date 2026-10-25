@@ -265,6 +265,7 @@ export default function Index() {
               </div>
               <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
+                  loading="lazy"
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/3d252354-5031-4a6c-aea5-5c7a02c7c218.png"
                   alt="Чистка лица"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
@@ -280,6 +281,7 @@ export default function Index() {
               </div>
               <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
+                  loading="lazy"
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/fe8a30db-1130-4620-a10e-4982f6ca880b.jpeg"
                   alt="Гидропилинг"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
@@ -325,6 +327,7 @@ export default function Index() {
               </div>
               <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
+                  loading="lazy"
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/9d5b1ed6-d036-4456-a947-f38e1ab23dde.jpeg"
                   alt="Массаж лица"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
@@ -340,6 +343,7 @@ export default function Index() {
               </div>
               <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
+                  loading="lazy"
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/240f6709-3359-4296-9eba-7879a9a1e119.jpeg"
                   alt="Микротоки"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
@@ -355,6 +359,7 @@ export default function Index() {
               </div>
               <div style={{flex:'0 0 42%', maxWidth:'42%', borderRadius:'10px', overflow:'hidden'}}>
                 <img
+                  loading="lazy"
                   src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/bucket/0e086857-89be-41d5-893b-1599fbe50781.jpeg"
                   alt="РФ-лифтинг"
                   style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}}
@@ -379,7 +384,7 @@ export default function Index() {
           <div className="programs-grid">
             <div className="program-card reveal">
               <div className="program-badge">Хит сезона</div>
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/d4f5b66e-9170-4f50-ab95-e962f7f8f659.jpg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/d4f5b66e-9170-4f50-ab95-e962f7f8f659.jpg" alt="" className="program-icon-3d" loading="lazy" />
               <div className="program-title">Релакс</div>
               <div className="program-composition">Ультразвуковая чистка · Пилинг · Массаж лица · Маска</div>
               <p className="program-desc">Полная перезагрузка за один визит. Очищаем, обновляем, расслабляем и питаем — кожа выходит из кабинета другой. Это не просто процедура, это маленький отпуск для лица.</p>
@@ -388,7 +393,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Сияние</div>
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/f66b42e0-df5e-4342-a9c1-0704ac2e125e.jpg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/f66b42e0-df5e-4342-a9c1-0704ac2e125e.jpg" alt="" className="program-icon-3d" loading="lazy" />
               <div className="program-title">Фарфоровая куколка</div>
               <div className="program-composition">Ультразвуковая чистка · Фонофорез с детокс-капсулами</div>
               <p className="program-desc">Ультразвук раскрывает поры, фонофорез доставляет детокс прямо в дерму. Никакого покраснения, никакого восстановления — только светлая, ровная, сияющая кожа уже на следующий день.</p>
@@ -397,7 +402,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Интенсив</div>
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/afc2367d-c422-431d-a7b7-64e3758cfa48.jpg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/afc2367d-c422-431d-a7b7-64e3758cfa48.jpg" alt="" className="program-icon-3d" loading="lazy" />
               <div className="program-title">Глубокое увлажнение</div>
               <div className="program-composition">Ультразвуковая чистка · Пилинг · Микронидлинг</div>
               <p className="program-desc">Три шага, один результат — кожа, которая выглядит отдохнувшей неделями. Дермапен доставляет гиалуроновую сыворотку в глубокие слои. Это то самое «увлажнение изнутри», о котором все говорят.</p>
@@ -406,7 +411,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Уход</div>
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/eaab8f48-ab98-438e-bb95-dfa2c00dbfc7.jpg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/eaab8f48-ab98-438e-bb95-dfa2c00dbfc7.jpg" alt="" className="program-icon-3d" loading="lazy" />
               <div className="program-title">Спа для рук</div>
               <div className="program-composition">Пилинг · Питательная маска · Массаж рук</div>
               <p className="program-desc">Руки выдают возраст быстрее лица — и чаще всего остаются без внимания. Пилинг снимает ороговевший слой, маска питает, массаж возвращает нежность. Один сеанс — и руки снова хочется показывать.</p>
@@ -415,7 +420,7 @@ export default function Index() {
             </div>
             <div className="program-card reveal">
               <div className="program-badge">Мужское</div>
-              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/20ac42fe-ce87-44ca-b080-60af79ae0877.jpg" alt="" className="program-icon-3d" />
+              <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/20ac42fe-ce87-44ca-b080-60af79ae0877.jpg" alt="" className="program-icon-3d" loading="lazy" />
               <div className="program-title">Мужской уход</div>
               <div className="program-composition">Глубокая чистка · Профессиональный уход · Тонизирование</div>
               <p className="program-desc">Мужская кожа грубее, жирнее и чаще раздражается после бритья. Программа разработана с учётом этих особенностей: глубокая чистка, интенсивный уход и тонизирование — свежий вид без лишних слов.</p>
@@ -482,21 +487,21 @@ export default function Index() {
                   <div className="why-stat-num">200+</div>
                   <div className="why-stat-label">довольных клиентов</div>
                 </div>
-                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/e8827a3a-7abc-4873-8d38-ccc6cd0b1c8c.jpg" alt="" className="why-icon-3d" />
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/e8827a3a-7abc-4873-8d38-ccc6cd0b1c8c.jpg" alt="" className="why-icon-3d" loading="lazy" />
               </div>
               <div className="why-stat-card">
                 <div>
                   <div className="why-stat-num">7</div>
                   <div className="why-stat-label">аппаратных и ручных методик</div>
                 </div>
-                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/89fcae0d-217f-4ae1-91a0-dd4660a8d216.jpg" alt="" className="why-icon-3d" />
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/89fcae0d-217f-4ae1-91a0-dd4660a8d216.jpg" alt="" className="why-icon-3d" loading="lazy" />
               </div>
               <div className="why-stat-card">
                 <div>
                   <div className="why-stat-num">98%</div>
                   <div className="why-stat-label">клиентов приходят снова</div>
                 </div>
-                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/72b6594d-7be3-4df9-a201-ee1a9e27da73.jpg" alt="" className="why-icon-3d" />
+                <img src="https://cdn.poehali.dev/projects/035a812e-0b57-4b0d-bfee-fe71e6d535d6/files/72b6594d-7be3-4df9-a201-ee1a9e27da73.jpg" alt="" className="why-icon-3d" loading="lazy" />
               </div>
             </div>
           </div>
@@ -524,7 +529,7 @@ export default function Index() {
             ].map((item, i) => (
               <div className="before-after-card" key={i} onClick={() => setLightbox(item)}>
                 <div className="before-after-image-wrap">
-                  <img src={item.src} alt={`${item.procedure} до и после`} className="before-after-img" />
+                  <img src={item.src} alt={`${item.procedure} до и после`} className="before-after-img" loading="lazy" />
                   <div className="before-after-labels">
                     <span className="ba-label ba-label--before">До</span>
                     <span className="ba-label ba-label--after">После</span>
@@ -625,7 +630,7 @@ export default function Index() {
                 }}/>
                 <img
                   src="https://cdn.poehali.dev/files/01919ea6-575b-472e-b797-203bdacb06d3.png"
-                  alt="Косметолог"
+                  alt="Косметолог Александра, студия красоты в Артёме"
                   style={{
                     position:'relative',
                     zIndex:2,
@@ -715,7 +720,7 @@ export default function Index() {
                 Написать в Telegram
               </a>
               <a href="https://max.ru/u/f9LHodD0cOJWNQYoHkdjIIwopAIiP3qxf2X9we8Lv4JkiaS7NcWkQqPzjvw" target="_blank" rel="noopener noreferrer" className="tg-btn" style={{background:'#6C3CE1', borderColor:'#6C3CE1', color:'#fff', marginTop:'8px'}}>
-                <img src="https://cdn.poehali.dev/files/cef57389-f268-4a39-9881-d5e7b39cc845.png" width="18" height="18" style={{borderRadius:'4px', objectFit:'cover'}} />
+                <img src="https://cdn.poehali.dev/files/cef57389-f268-4a39-9881-d5e7b39cc845.png" width="18" height="18" alt="MAX" style={{borderRadius:'4px', objectFit:'cover'}} />
                 Написать в Макс
               </a>
               <a href="https://t.me/moy_kosmetolog" target="_blank" rel="noopener noreferrer" className="tg-btn" style={{marginTop:'8px'}}>

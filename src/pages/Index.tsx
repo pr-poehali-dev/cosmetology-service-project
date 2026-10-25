@@ -438,7 +438,7 @@ export default function Index() {
       <section className="why-section" id="why">
         <div className="container">
           <div className="why-inner">
-            <div>
+            <div className="why-left">
               <div className="section-eyebrow reveal">Почему я</div>
               <h2 className="section-title reveal" style={{marginBottom:'var(--space-8)'}}>Почему клиенты возвращаются снова</h2>
               <ul className="why-list">
